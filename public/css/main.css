@@ -1,0 +1,280 @@
+/* Global Setting */
+body{margin:0; padding:0;text-align:left; font-size:12px; font-family:'Microsoft YaHei',Arial; background:#FFF;}
+table{border-collapse:collapse;}
+td,th{padding:0;}
+ul,li,dd,dl,dt{margin:0; padding:0; list-style:none; word-break:break-all;}
+img{border:0;outline-width:0px;vertical-align:top; }
+p{margin:0; padding:0; word-break:break-all;}
+h1,h2,h3,h4{margin:0;padding:0; font-weight:normal; display:inline-block; color:#344f6d;}
+em{ font-size:12px; font-style:normal;}
+hr{background:none;border:none;border-bottom:1px solid #CCC;#border-bottom:0;}
+.clear {clear:both;height:0;font-size:1px;line-height: 0px;}
+a{text-decoration:none; border:0; outline:none; blr:expression(this.onFocus=this.blur()); -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-tap-highlight-color: transparent;}
+select,input,textarea{font-family:inherit; outline:none;}
+.clearfix:after{clear:none;}
+
+.innerDiv{ width:100%; height:100%; position:relative;}
+.fix-height,.relative{height:1008px; width:640px;}
+.fix-height{width:640px;position:absolute;top:0px;left:0px; }
+.relative{position:relative;}
+.bgimg{position:absolute;left:0;top:0;}
+.clear{ clear:both;}
+
+
+.wrap{ width:640px; height:100%; overflow:hidden; margin:0 auto; border:none; padding:0; display:block; position:relative;}
+/*首页*/
+.preload-pop{ }
+.btn-group{ width:324px; height:262px; position:absolute; left:159px; top:442px; display:none;}
+
+.p1{ }
+.p1-img1{ width:611px; height:202px; background:url(../images/p1-img1.png) no-repeat; position:absolute; left:15px; top:3px;}
+.p1-img2{ width:435px; height:79px; background:url(../images/p1-img2.png) no-repeat; position:absolute; left:34px; top:233px;}
+.p1-goldBox{ width:206px; height:206px; background:url(../images/p1-gold.png) no-repeat; position:absolute; left:219px; top:443px;}
+.p1-goldShade{ position:absolute; left:24px; top:622px;}
+.p1-piont{ width:206px; height:206px; background:url(../images/p1-piont.png) no-repeat; position:absolute; left:219px; top:443px; transform-origin:50% 50%; -webkit-animation:circle 5s infinite linear;}
+@-webkit-keyframes circle{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+	}
+}
+
+.p1-btn1{ width:323px; height:65px; background:url(../images/p1-btn1.png) no-repeat; position:absolute; left:0; top:0;}
+.p1-btn2{ width:323px; height:65px; background:url(../images/p1-btn2.png) no-repeat; position:absolute; left:0; top:100px;}
+.p1-btn3{ width:323px; height:65px; background:url(../images/p1-btn3.png) no-repeat; position:absolute; left:0; top:200px;}
+.btn-piont{ position:absolute; left:-2px; top:-4px; -webkit-animation:piontFadeOut 7s infinite linear;}
+@-webkit-keyframes piontFadeOut{
+	0%{
+		left:-4px;
+		top:-8px;
+		opacity:1;
+	}
+	15%{
+		left:315px;
+		top:-8px;	
+		opacity:1;
+	}
+	32.9%{
+		left:315px;
+		top:61px;
+		opacity:0;
+	}
+	33%{
+		left:315px;
+		top:94px;
+		opacity:1;
+	}
+	48%{
+		left:-4px;
+		top:94px;
+		opacity:1;
+	}
+	65.9%{
+		left:-4px;
+		top:161px;
+		opacity:0;	
+	}
+	66%{
+		left:-4px;
+		top:193px;
+		opacity:1;		
+	}
+	81%{
+		left:315px;
+		top:193px;
+		opacity:1;
+		-webkit-transform:scale(1);
+	}
+	98%{
+		left:315px;
+		top:257px;
+		opacity:1;
+		-webkit-transform:scale(2);
+	}
+	100%{
+		left:315px;
+		top:257px;
+		opacity:0;
+	}
+}
+
+.p1-logo{ position:absolute; left:251px; top:826px;}
+.p1-img3{ position:absolute; left:170px; top:972px;}
+.p1-percent{ width:100%; position:absolute; left:0; top:675px; text-align:center; font-size:18px; color:#ae8c65;}
+
+
+/*榜单loading*/
+.p2{ display:none;}
+.p2-gold{ position:absolute; left:286px; top:426px;}
+.p2-piont{ position:absolute; left:286px; top:426px; -webkit-animation:circle 5s infinite linear;}
+.p2-img1{ position:absolute; left:165px; top:528px;}
+.p2-d1{ position:absolute; left:453px; top:551px; display:none;}
+.p2-d2{ position:absolute; left:463px; top:551px; display:none;}
+.p2-d3{ position:absolute; left:473px; top:551px; display:none;}
+
+/*榜单*/
+.p3{ display: none;}
+.p3-img1{ width: 578px; height: 150px; background: url("../images/p3-img1.png") no-repeat; position: absolute; left: 31px; top: 41px;}
+.p3-box{ width: 578px; position: absolute; left: 31px; top: 198px;}
+.myTable tr{ font-size: 19px; color: #a79783; text-align: center;}
+.myTable tr img{ padding: 27px 0 0 8px;}
+.myTable tr td{ line-height: 60px;}
+.myTable .first{ font-size: 30px; color: #ae8c65; text-align: center;}
+.myTable .first img{ padding: 28px 0 0 5px;}
+.myTable tr{ border-bottom: 1px dashed #565b62;}
+.myTable tr:nth-child(even){ background-color: rgba(53,60,68,.6);}
+.p3-btn1{ width: 287px; height: 65px; background: url("../images/p3-btn1.png") no-repeat; position: absolute; left: 177px; top: 852px; display: none;}
+.p3-piont1{ position: absolute; left:140px; top: -4px; -webkit-animation:piontMove1 2s infinite linear;}
+.p3-piont2{ position: absolute; left:140px; top: 60px; -webkit-animation:piontMove2 2s infinite linear;}
+
+@-webkit-keyframes piontMove1{
+	0%{
+		left: 140px;
+		top: -4px;
+	}
+	30%{
+		left:276px;
+		top:-4px;
+	}
+	60%{
+		left:276px;
+		top:65px;
+		opacity: 0;
+	}
+	100%{
+		left:276px;
+		top:65px;
+		opacity: 0;
+	}
+}
+@-webkit-keyframes piontMove2{
+	0%{
+		left: 140px;
+		top: 60px;
+	}
+	30%{
+		left:-8px;
+		top:60px;
+	}
+	60%{
+		left:-8px;
+		top:0px;
+		opacity: 0;
+	}
+	100%{
+		left:-8px;
+		top:0px;
+		opacity: 0;
+	}
+}
+.p3-img2{ position: absolute; left: 35px; top: 196px;}
+.p3-btn2{ width: 236px; height: 65px; background: url("../images/p3-btnBg.png") no-repeat; position: absolute; left: 74px; top: 844px;}
+.p3-btn3{ width: 236px; height: 65px; background: url("../images/p3-btnBg.png") no-repeat; position: absolute; left: 330px; top: 844px;}
+.p3-btn2 img, .p3-btn3 img{ -webkit-animation:fadeGo 2s infinite linear;}
+@-webkit-keyframes fadeGo{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+/*九宫格抽奖*/
+.p4{ display:none;}
+.p4-img1{ width: 435px; height: 84px; background: url("../images/p4-img1.png") no-repeat; position: absolute; left: 102px; top: 89px;}
+.myBox{ width: 536px; height: 536px; background: url("../images/p4-box.png") no-repeat; position: absolute; left: 52px; top: 268px;}
+.myBox ul{margin:0 auto 0;position:relative;width:536px;height:536px;overflow:hidden;}
+.myBox li:nth-child(1){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-thx.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(2){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-yk.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(3){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-gwl.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(4){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-thx.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(5){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-yk.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(6){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-thx.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(7){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-gwl.png") no-repeat;background-position:0 0;}
+.myBox li:nth-child(8){width:177px;height:177px;text-align:center;line-height:100px;font-size:40px;color:#fff;background:url("../images/p4-wh.png") no-repeat;background-position:0 0;}
+.myBox li.on{ background-position:0 100%;}
+.bt1{ width: 177px; height: 177px; background: url("../images/p4-btn.png") no-repeat; position: absolute; left: 233px; top: 447px;}
+.bt1 img{ position: absolute; left: 16px; top: 121px; opacity:1; -webkit-animation:btnScale 2s infinite linear;}
+@-webkit-keyframes btnScale{
+	0%{
+		opacity:1;
+		-webkit-transform:scale(1); 	
+	}
+	50%{
+		opacity:1;
+		-webkit-transform:scale(1.1); 	
+	}	
+	100%{
+		opacity:0;
+		-webkit-transform:scale(1); 	
+	}	
+}
+.p4-light1{ position:absolute; left:35px; top:258px; opacity:0.8}
+.p4-light2{ position:absolute; left:52px; top:350px;}
+/*.p4Light1{ -webkit-animation:p4light1 3s infinite linear;}
+@-webkit-keyframes p4light1{
+	0%{
+		left:35px;
+		opacity:0.8;
+	}
+	80%{
+		left:300px;
+		opacity:0;
+	}
+	100%{
+		opacity:0;	
+	}	
+}*/
+
+/*一等奖*/
+.p5{ display:none;}
+.p5-img1{ position:absolute; left:238px; top:62px;}
+.p5-img2{ position:absolute;}
+.p5 input{ background:none; border:none; -webkit-tap-highlight-color:rgba(255,0,0,0); color:#ae8c65; font-size:25px; line-height:39px;}
+.name{ width:119px; height:39px; position:absolute; left:160px; top:371px; padding-left:10px;}
+.mobil{ width:158px; height:39px; position:absolute; left:399px; top:371px; font-size:20px;}
+.adress{ width:346px; height:39px; position:absolute; left:212px; top:426px; padding-left:10px;}
+.ma{ position:absolute; left:0; top:708px;}
+.p5-btn{ width:238px; height:66px; position:absolute; left:201px; top:616px;}
+
+/*二等奖*/
+.p6{ display:none;}
+.p6-btn{ width:238px; height:66px; position:absolute; left:201px; top:572px;}
+.p6-info{ width:100%; position:absolute; left:0px; top:256px; font-size:37px; color:#ae8c65; text-align:center;}
+.p6-num{ width:100%; position:absolute; left:0px; top:320px; font-size:37px; color:#ae8c65; text-align:center;}
+
+/*未中奖*/
+.p7{ display:none;}
+
+/*三等奖*/
+.p8{ display:none;}
+.p8-info{ width:100%; position:absolute; left:0px; top:256px; font-size:37px; color:#ae8c65; text-align:center;}
+.p8-num{ width:100%; position:absolute; left:0px; top:320px; font-size:37px; color:#ae8c65; text-align:center;}
+
+/*朋友圈分享层*/
+.share{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:99; display:none;}
+.shadow{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000000; opacity:0.6;}
+.shareImg{ position:absolute; left:275px; top:20px;}
+
+/*规则*/
+.p9{ display:none;}
+.p9-box{ width:476px; height:708px; position:absolute; left:82px; top:224px; overflow-y:scroll;}
+.p9-close{ position:absolute; right:46px; top:30px;}
+.p9-rule{ width:476px; height:1720px; background:url(../images/p9-img1.png) no-repeat;}
+.p9-down{ position:absolute; left:304px; top:898px; opacity:1; -webkit-animation:p9downFade 4s infinite linear;}
+@-webkit-keyframes p9downFade{
+	0%{
+		opacity:1;	
+	}
+	50%{
+		opacity:0; 	
+	}	
+	100%{
+		opacity:1; 	
+	}	
+}
+
+
