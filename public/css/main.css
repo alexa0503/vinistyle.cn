@@ -117,14 +117,16 @@ select,input,textarea{font-family:inherit; outline:none;}
 /*榜单*/
 .p3{ display: none;}
 .p3-img1{ width: 578px; height: 150px; background: url("../images/p3-img1.png") no-repeat; position: absolute; left: 31px; top: 41px;}
-.p3-box{ width: 578px; position: absolute; left: 31px; top: 198px;}
+.p3-box{ width: 578px; position: absolute; left: 31px; top: 142px;}
 .myTable tr{ font-size: 19px; color: #a79783; text-align: center;}
 .myTable tr img{ padding: 27px 0 0 8px;}
 .myTable tr td{ line-height: 60px;}
 .myTable .first{ font-size: 22px; color: #ae8c65; text-align: center; font-weight:bold;}
 .myTable .first img{ padding: 28px 0 0 5px;}
 .myTable tr{ border-bottom: 1px dashed #565b62;}
-.myTable tr:nth-child(even){ background-color: rgba(53,60,68,.6);}
+.myTable tr:nth-child(odd){ background-color: rgba(53,60,68,.6);}
+#tableNav{ border:none; background:none;}
+#tableNav td{ font-size:17px; color:#FFF;}
 .p3-piont1{ position: absolute; left:108px; top:-8px; opacity:0;}
 .p3-piont2{ position: absolute; left:108px; top:-8px;}
 .p3-piont3{ position: absolute; left:108px; top:56px; opacity:0;}
