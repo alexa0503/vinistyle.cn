@@ -6,7 +6,7 @@ $('document').ready(function () {
         jsonp: 'callback',
         data: {url: location.href},
         success: function (json) {
-            wxData = json;
+            wxData = $.extend(wxData,json);
             wx.config({
                 debug: wxData.debug || false,
                 appId: wxData.appId,
