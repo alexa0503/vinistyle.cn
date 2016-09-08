@@ -102,19 +102,19 @@
 
         </div>
 
-        <div class="p3-btn1">
+
+        <div class="p3-btn2">
           <div class="innerDiv">
+            <img src="images/p3-btn2.png" />
             <img class="p3-piont1" src="images/p3-piont.png" />
-            <img class="p3-piont2" src="images/p3-piont.png" />
+            <img class="p3-piont3" src="images/p3-piont.png" />
           </div>
         </div>
-
-        <div class="p3-group">
-          <div class="p3-btn2">
-            <img src="images/p3-btn2.png" />
-          </div>
-          <div class="p3-btn3">
+        <div class="p3-btn3">
+          <div class="innerDiv">
             <img src="images/p3-btn3.png" />
+            <img class="p3-piont2 p3-p1" src="images/p3-piont.png" />
+            <img class="p3-piont4 p3-p2" src="images/p3-piont.png" />
           </div>
         </div>
 
@@ -299,36 +299,7 @@ window.onload = function(){
 	})
     $('.p3-btn1').on('touchend', function(){
         //$('.p2').fadeIn();
-        $.post('lottery',function(json){
-            var prize = 0;
-            if(json && json.ret == 0){
-                prize = json.prize;
-            }
-        	$('.cj1').myLuckDraw({
-        		row : 3, //行
-        		column : 3, //列
-        		spacing: 1, //空隙
-        		click : '.bt1', //点击触发
-        		time: 1 ,//匀速运动的时间
-        		end:function(e){
-                    if(e == 1){
-                        $('.p5').fadeIn();
-                    }
-                    else if(e == 2){
-                        $('.p6').fadeIn();
-                    }
-                    else if(e == 3){
-                        $('.p8').fadeIn();
-                    }
-                    else{
-                        $('.p7').fadeIn();
-                    }
-        			//抽奖执行完毕的回调函数,参数e为获奖编号
-        			//因为这里是指定的，所以e == 5
-        			//$('.jg1 em').text(e);
-        		}
-        	},prize); //这里tar是确定想要抽奖的目标是几号
-        },"JSON");
+
     });
 
 	//点击进入抽奖页面
@@ -357,14 +328,51 @@ window.onload = function(){
 
   //点击保存榜单按钮,这里需要后台保存榜单功能，保存的同时执行下面的show()方法
   $('.p3-btn2').on('touchend',function () {
-    $('.p3-group').fadeOut();
-    $('.p3-btn1').fadeIn();
+
+    $.post('lottery',function(json){
+        var prize = 0;
+        if(json && json.ret == 0){
+            prize = json.prize;
+        }
+        $('.cj1').myLuckDraw({
+            row : 3, //行
+            column : 3, //列
+            spacing: 1, //空隙
+            click : '.bt1', //点击触发
+            time: 1 ,//匀速运动的时间
+            end:function(e){
+                if(e == 1){
+                    $('.p5').fadeIn();
+                }
+                else if(e == 2){
+                    $('.p6').fadeIn();
+                }
+                else if(e == 3){
+                    $('.p8').fadeIn();
+                }
+                else{
+                    $('.p7').fadeIn();
+                }
+                //抽奖执行完毕的回调函数,参数e为获奖编号
+                //因为这里是指定的，所以e == 5
+                //$('.jg1 em').text(e);
+            }
+        },prize); //这里tar是确定想要抽奖的目标是几号
+        $('.p4').fadeIn();
+    },"JSON");
   })
+
+
 
 	//刷新榜单按钮，点击后需要出现一个假的loading画面，我做掉了，然后刷新页面里的table表单
 	$('.p3-btn3').on('touchend',function(){
 		$('.p3').fadeOut();
 		$('.p2').fadeIn();
+
+		$('.p3-piont2').removeClass('p3-p1').css('opacity',0);
+		$('.p3-piont4').removeClass('p3-p2').css('opacity',0);
+		$('.p3-piont1').addClass('p3-p1').css('opacity',1);
+		$('.p3-piont3').addClass('p3-p2').css('opacity',1);
         $.get('rich/list',function(html){
             $('.p3-box').html(html);
             $('.p2').fadeOut();
