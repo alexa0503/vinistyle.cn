@@ -20,7 +20,7 @@ Route::get('/wx/share', function(){
     $_share = [
         [
             'title' => '告诉你个小秘密，其实我是富一代',
-            'desc' => '我只告诉你啦，你可千万不要告诉别人啊，做人还是要低调……',
+            'desc' => '我只告诉你啦，你可千万不要告诉别人啊，做人要低调……',
             'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
         ],
         [
@@ -43,7 +43,7 @@ Route::get('/wx/share', function(){
       'title' => $_share[$n]['title'],
       'desc' => $_share[$n]['desc'],
       'title_timeline' => $_share[$n]['title_timeline'],
-      'link' => 'http://mp.weixin.qq.com/s?__biz=MzI1MTI5MDg4OA==&mid=100000405&idx=1&sn=255f42c249e47766104a19258371786b&scene=1&srcid=0824HZCaXI8qQI7tSSNzsHlo&from=singlemessage&isappinstalled=0#wechat_redirect',
+      'link' => env('APP_URL'),
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
     ];
     return json_encode(array_merge($share, $config));
