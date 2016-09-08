@@ -15,10 +15,6 @@ class HomeController extends Controller
     {
         return view('index');
     }
-    public function save()
-    {
-
-    }
     public function richList()
     {
         $rich_list = App\RichList::where('user_id', Session::get('wechat.id'))->orderBy('created_at', 'DESC')->first();
@@ -71,7 +67,7 @@ class HomeController extends Controller
     }
     public function lottery()
     {
-        $prize = rand(0,4);
+        $prize = rand(1,4);
         return ['prize'=>$prize, 'ret'=>0];
     }
 }

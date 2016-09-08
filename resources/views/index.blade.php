@@ -11,6 +11,8 @@
 <script src="js/preloadjs-0.6.2.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/luckDraw.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/wx.js"></script>
 <!--移动端版本兼容 -->
 <script type="text/javascript">
     var phoneWidth = parseInt(window.screen.width);
@@ -301,17 +303,9 @@ window.onload = function(){
     $('.p3-btn1').on('touchend', function(){
         //$('.p2').fadeIn();
         $.post('lottery',function(json){
-            var prize = 7;
+            var prize = 0;
             if(json && json.ret == 0){
-                if(json.prize == 1){
-                    prize = 5;
-                }
-                else if(json.prize == 2){
-                    prize = 6;
-                }
-                else if(json.prize == 3){
-                    prize = 8;
-                }
+                prize = json.prize;
             }
         	$('.cj1').myLuckDraw({
         		row : 3, //行

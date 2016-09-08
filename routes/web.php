@@ -17,6 +17,19 @@ Route::post('info', 'HomeController@info');
 Route::post('lottery', 'HomeController@lottery');
 Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));
+    $_share = [
+        [
+            'title' => '告诉你个小秘密，其实我是富一代',
+            'desc' => '我只告诉你啦，你可千万不要告诉别人啊，做人还是要低调……',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪zZ（授权微信名）年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+        ],
+        [
+            'title' => '如何在30岁前挤进全球富豪榜',
+            'desc' => '先设定一个小目标，成为有钱人',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪zZ（授权微信名）年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+        ],
+    ];
+    $n = rand(0,1);
     $options = [
       'app_id' => env('WECHAT_APPID'),
       'secret' => env('WECHAT_SECRET'),
@@ -27,8 +40,9 @@ Route::get('/wx/share', function(){
     $js->setUrl($url);
     $config = json_decode($js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ'), false), true);
     $share = [
-      'title' => env('WECHAT_SHARE_TITLE'),
-      'desc' => env('WECHAT_SHARE_DESC'),
+      'title' => $_share[$n]['title'],
+      'desc' => $_share[$n]['desc'],
+      'title_timeline' => $_share[$n]['title_timeline'],
       'link' => 'http://mp.weixin.qq.com/s?__biz=MzI1MTI5MDg4OA==&mid=100000405&idx=1&sn=255f42c249e47766104a19258371786b&scene=1&srcid=0824HZCaXI8qQI7tSSNzsHlo&from=singlemessage&isappinstalled=0#wechat_redirect',
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
     ];
