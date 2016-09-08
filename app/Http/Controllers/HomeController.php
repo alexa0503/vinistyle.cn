@@ -1,15 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
+use App;
+use Session;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('web');
+        $this->middleware('wechat.auth');
+    }
     public function index()
     {
         return view('index');
     }
-    public function create()
+    public function save()
     {
+
+    }
+    public function richList()
+    {
+        $rich_list = App\RichList::where('user_id', Session::get('wechat.id'))->orderBy('created_at', 'DESC')->first();
+        $wealth = rand(2401,6400);
+        if( null == $rich_list){
+            $scale = 0;
+        }
+        else{
+            $scale = sprintf('%.2f',$wealth/$rich_list->wealth - 1);
+        }
+        $name = Session::get('wechat.nickname');
         $list = [
             ['name'=>'比尔', 'wealth'=>'5200', 'scale'=>'-0.06', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
             ['name'=>'沃伦', 'wealth'=>'4500', 'scale'=>'-0.11', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
@@ -22,8 +42,6 @@ class HomeController extends Controller
             ['name'=>'查尔斯', 'wealth'=>'2500', 'scale'=>'0.22', 'from'=>'能源', 'location'=>'美国', 'isUser'=>false],
             ['name'=>'伯纳德', 'wealth'=>'2400', 'scale'=>'-0.76', 'from'=>'时装', 'location'=>'法国', 'isUser'=>false]
         ];
-        $wealth = rand(2401,9999);
-        $scale = 0;
         $_list = [];
         $n = 0;
         foreach($list as $k=>$v){
@@ -37,19 +55,22 @@ class HomeController extends Controller
                 $_list[$i] = $list[$i];
             }
             elseif($i == $n){
-                $_list[$i] = ['name'=>'z.Z', 'wealth'=>$wealth, 'scale'=>$scale, 'from'=>'理财', 'location'=>'中国', 'isUser'=>true];
+                $_list[$i] = ['name'=>$name, 'wealth'=>$wealth, 'scale'=>$scale, 'from'=>'理财', 'location'=>'中国', 'isUser'=>true];
             }
             else{
                 $_list[$i] = $list[$i-1];
             }
         }
+        $rich_list = new App\RichList();
+        $rich_list->wealth = $wealth;
+        $rich_list->user_id = Session::get('wechat.id');
+        $rich_list->save();
         sleep(1);
 
         return view('list', ['list' => $_list]);
     }
     public function lottery()
     {
-        sleep(5);
         $prize = rand(0,4);
         return ['prize'=>$prize, 'ret'=>0];
     }

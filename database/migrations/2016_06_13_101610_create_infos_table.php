@@ -15,7 +15,7 @@ class CreateInfosTable extends Migration
         Schema::create('infos', function (Blueprint $table) {
             //$table->increments('id');
             $table->integer('id')->unsigned()->primary();
-            $table->foreign('id')->references('id')->on('lotteries');
+            $table->foreign('id')->references('id')->on('wechat_users');
             $table->string('name',60);
             $table->string('mobile',60);
             $table->string('address',60);
@@ -32,6 +32,6 @@ class CreateInfosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('infos');
+        Schema::dropIfExists('rich_lists');
     }
 }

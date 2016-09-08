@@ -288,25 +288,6 @@ window.onload = function(){
 
 	//点击我的财富按钮，此处需要判断用户中了几等奖
 	$('.p1-btn3, .p3-btn1').on('touchend',function(){
-        $.post('lottery',function(json){
-            if(json && json.ret == 0){
-                if(json.prize == 1){
-                    $('.p5').fadeIn();
-                }
-                else if(json.prize == 2){
-                    $('.p6').fadeIn();
-                }
-                else if(json.prize == 3){
-                    $('.p8').fadeIn();
-                }
-                else{
-                    $('.p7').fadeIn();
-                }
-            }
-            else{
-                $('.p7').fadeIn();
-            }
-        },"JSON");
 		//一等奖
 		//$('.p5').fadeIn();
 		//二等奖
@@ -317,16 +298,57 @@ window.onload = function(){
 		//$('.p7').fadeIn();
 		//p8-info、p6-info、p8-num、p6-num需要后台传过来，分别是中奖项目和号码
 	})
+    $('.p3-btn1').on('touchend', function(){
+        //$('.p2').fadeIn();
+        $.post('lottery',function(json){
+            var prize = 7;
+            if(json && json.ret == 0){
+                if(json.prize == 1){
+                    prize = 5;
+                }
+                else if(json.prize == 2){
+                    prize = 6;
+                }
+                else if(json.prize == 3){
+                    prize = 8;
+                }
+            }
+        	$('.cj1').myLuckDraw({
+        		row : 3, //行
+        		column : 3, //列
+        		spacing: 1, //空隙
+        		click : '.bt1', //点击触发
+        		time: 1 ,//匀速运动的时间
+        		end:function(e){
+                    if(e == 1){
+                        $('.p5').fadeIn();
+                    }
+                    else if(e == 2){
+                        $('.p6').fadeIn();
+                    }
+                    else if(e == 3){
+                        $('.p8').fadeIn();
+                    }
+                    else{
+                        $('.p7').fadeIn();
+                    }
+        			//抽奖执行完毕的回调函数,参数e为获奖编号
+        			//因为这里是指定的，所以e == 5
+        			//$('.jg1 em').text(e);
+        		}
+        	},prize); //这里tar是确定想要抽奖的目标是几号
+        },"JSON");
+    });
 
 	//点击进入抽奖页面
 	$('.p3-btn1').on('touchend',function () {
-    $('.p4').fadeIn();
-  });
+        $('.p4').fadeIn();
+    });
 
 	//点击进入榜单按钮
 	$('.p1-btn1').on('touchend',function(){
 		$('.p2').fadeIn();
-        $.get('create',function(html){
+        $.get('rich/list',function(html){
             $('.p3-box').html(html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();
@@ -352,7 +374,7 @@ window.onload = function(){
 	$('.p3-btn3').on('touchend',function(){
 		$('.p3').fadeOut();
 		$('.p2').fadeIn();
-        $.get('create',function(html){
+        $.get('rich/list',function(html){
             $('.p3-box').html(html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();

@@ -3,7 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Session;
+use App;
 class WechatAuthMiddleware
 {
     /**
@@ -17,9 +18,13 @@ class WechatAuthMiddleware
     {
         $request->session()->set('wechat.redirect_uri', $request->getUri());
         if(env('APP_ENV') == 'local'){
-            $request->session()->set('wechat.openid', 'o2-sBj0oOQJCIq6yR7I9HtrqxZcY');
+            $wechat_user = App\wechatUser::find(1);
+            Session::set('wechat.openid',$wechat_user->open_id);
+            Session::set('wechat.id',$wechat_user->id);
+            Session::set('wechat.nickname', json_decode($wechat_user->nick_name));
+            Session::set('wechat.headimg', $wechat_user->head_img);
         }
-        if( null == $request->session()->get('wechat.openid') && $request->getClientIp() != '127.0.0.1'){
+        if( null == $request->session()->get('wechat.id') ){
             return redirect('/wechat/auth');
         }
         return $next($request);

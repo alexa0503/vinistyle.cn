@@ -24,7 +24,7 @@
 			var line = row-2;//除去上下de行数
 			var length = $this.children('li').length;
 			var options = this.options;
-			
+
 			if(length < allNumber){
 				for(var i=length;i<=(allNumber-length);i++){
 					$this.append("<li></li>");
@@ -43,7 +43,7 @@
 			children.css({
 				position:'absolute'
 			});
-			
+
 
 			if(line == 0){
 				initOne();
@@ -59,7 +59,7 @@
 			//左： else
 			//如果只有两行
 			//此时分成4个部分，上、右、下、左
-			
+
 			function initOne(){
 				children.each(function(index){
 					if(index >=0 && index <= (col-1)){
@@ -116,7 +116,7 @@
 			var v0 = 500.0;
 			var t = 0.0 , v ;
 			var time = this.options.time*1000;//匀速运行的时间，单位秒
-			
+
 			$(click).on('click',function(){
 				if(!flg){
 					flg = true;
@@ -127,7 +127,7 @@
 				}
 			});
 
-			
+
 
 			//加速
 			function speedUp(){
@@ -198,19 +198,7 @@
 
 $(function(){
 
-	var tar = 5;
-	$('.cj1').myLuckDraw({
-		row : 3, //行
-		column : 3, //列
-		spacing: 1, //空隙
-		click : '.bt1', //点击触发
-		time: 1 ,//匀速运动的时间
-		end:function(e){
-			//抽奖执行完毕的回调函数,参数e为获奖编号
-			//因为这里是指定的，所以e == 5
-			//$('.jg1 em').text(e);
-		}
-	},tar); //这里tar是确定想要抽奖的目标是几号
+	
 
 
 });
