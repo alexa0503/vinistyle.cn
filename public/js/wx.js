@@ -1,3 +1,4 @@
+var wxData = {};
 $('document').ready(function () {
     $.ajax({
         url: '/wx/share',
@@ -5,7 +6,7 @@ $('document').ready(function () {
         jsonp: 'callback',
         data: {url: location.href},
         success: function (json) {
-            wxData = $.extend(wxData,json);
+            wxData = json;
             wx.config({
                 debug: wxData.debug || false,
                 appId: wxData.appId,

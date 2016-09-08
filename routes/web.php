@@ -21,7 +21,7 @@ Route::get('/wx/share', function(){
         [
             'title' => '告诉你个小秘密，其实我是富一代',
             'desc' => '我只告诉你啦，你可千万不要告诉别人啊，做人还是要低调……',
-            'title_timeline' => '2016年华氏全球富豪榜：中国富豪zZ（授权微信名）年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'++'年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
         ],
         [
             'title' => '如何在30岁前挤进全球富豪榜',
@@ -50,12 +50,14 @@ Route::get('/wx/share', function(){
 });
 Route::get('logout',function(){
     Request::session()->set('wechat.openid',null);
+    Request::session()->set('wechat.id',null);
     return redirect('/');
 });
 Route::get('login',function(){
-    $wechat_user = App\wechatUser::find(1);
+    $wechat_user = App\WechatUser::find(1);
     Request::session()->set('wechat.openid',$wechat_user->open_id);
     Request::session()->set('wechat.id',$wechat_user->id);
+    Request::session()->set('wechat.nickname',json_decode($wechat_user->nick_name));
     return redirect('/');
 });
 
