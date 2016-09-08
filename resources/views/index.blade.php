@@ -35,12 +35,6 @@
 
 <body>
 <div class="wrap">
-	<!--朋友圈分享-->
-  <div class="share">
-  	<div class="shadow"></div>
-    <img class="shareImg" src="images/share.png" />
-  </div>
-  <!--朋友圈分享-->
 
   <!--首页-->
   <div class="p1">
