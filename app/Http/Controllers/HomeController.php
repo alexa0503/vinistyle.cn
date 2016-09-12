@@ -85,7 +85,7 @@ class HomeController extends Controller
 
         $_list = $this->reorder($data);
 
-        if( $id != null ){
+        if( $id != null && $id != Session::get('wechat.id')){
             $rich_list = App\RichList::find($id);
             if(null == $rich_list){
                 return ['ret'=>1001,'msg'=>''];
@@ -123,7 +123,7 @@ class HomeController extends Controller
 
         $_list = $this->reorder($data);
 
-        if( $id != null ){
+        if( $id != null && $id != Session::get('wechat.id')){
             $rich_list = App\RichList::find($id);
             if(null == $rich_list){
                 return ['ret'=>1001,'msg'=>''];
