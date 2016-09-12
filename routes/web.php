@@ -28,10 +28,9 @@ Route::get('/wx/share', function(){
         [
             'title' => '如何在30岁前挤进全球富豪榜',
             'desc' => '先设定一个小目标，成为有钱人',
-            'title_timeline' => '2016年华氏全球富豪榜：中国富豪zZ（授权微信名）年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
         ],
     ];
-    $n = rand(0,1);
     $options = [
       'app_id' => env('WECHAT_APPID'),
       'secret' => env('WECHAT_SECRET'),
