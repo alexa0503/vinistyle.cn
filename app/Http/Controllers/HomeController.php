@@ -37,7 +37,7 @@ class HomeController extends Controller
             ];
         }
 
-        if( null == $data){
+        if( null == $data || $data['wealth'] == 0){
             return $list;
         }
         $_list = [];
