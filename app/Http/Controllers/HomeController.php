@@ -85,17 +85,20 @@ class HomeController extends Controller
 
         $_list = $this->reorder($data);
 
-        if( $id != null && $id != Session::get('wechat.id')){
+        if( $id != null){
             $rich_list = App\RichList::find($id);
             if(null == $rich_list){
                 return ['ret'=>1001,'msg'=>''];
             }
-            $data = [
-                'name' => json_decode($rich_list->user->nick_name),
-                'wealth' => $rich_list->wealth,
-                'scale' => $rich_list->scale,
-            ];
-            $_list = $this->reorder($data, $_list);
+            if($rich_list->user_id != Session::get('wechat.id')){
+                $data = [
+                    'name' => json_decode($rich_list->user->nick_name),
+                    'wealth' => $rich_list->wealth,
+                    'scale' => $rich_list->scale,
+                ];
+                $_list = $this->reorder($data, $_list);
+            }
+
         }
 
         return view('list', ['list' => $_list]);
@@ -128,12 +131,15 @@ class HomeController extends Controller
             if(null == $rich_list){
                 return ['ret'=>1001,'msg'=>''];
             }
-            $data = [
-                'name' => json_decode($rich_list->user->nick_name),
-                'wealth' => $rich_list->wealth,
-                'scale' => $rich_list->scale,
-            ];
-            $_list = $this->reorder($data, $_list);
+            if($rich_list->user_id != Session::get('wechat.id')){
+                $data = [
+                    'name' => json_decode($rich_list->user->nick_name),
+                    'wealth' => $rich_list->wealth,
+                    'scale' => $rich_list->scale,
+                ];
+                $_list = $this->reorder($data, $_list);
+            }
+
         }
 
         $rich_list = new App\RichList();
