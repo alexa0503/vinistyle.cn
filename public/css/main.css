@@ -250,10 +250,10 @@ select,input,textarea{font-family:inherit; outline:none;}
 .p5{ display:none;}
 .p5-img1{ position:absolute; left:238px; top:62px;}
 .p5-img2{ position:absolute;}
-.p5 input{ background:none; border:none; -webkit-tap-highlight-color:rgba(255,0,0,0); color:#ae8c65; font-size:25px; line-height:39px;}
-.name{ width:119px; height:39px; position:absolute; left:160px; top:371px; padding-left:10px;}
+.p5 input{ background:none; border:none; -webkit-tap-highlight-color:rgba(255,0,0,0); color:#ae8c65;line-height:39px;}
+.name{ width:119px; height:39px; position:absolute; left:160px; top:371px; padding-left:10px; font-size:25px;}
 .mobil{ width:158px; height:39px; position:absolute; left:399px; top:371px; font-size:20px;}
-.adress{ width:346px; height:39px; position:absolute; left:212px; top:426px; padding-left:10px;}
+.adress{ width:346px; height:39px; position:absolute; left:212px; top:426px; padding-left:10px; font-size:25px;}
 .ma{ position:absolute; left:0; top:708px;}
 .p5-btn{ width:238px; height:66px; position:absolute; left:201px; top:616px;}
 
