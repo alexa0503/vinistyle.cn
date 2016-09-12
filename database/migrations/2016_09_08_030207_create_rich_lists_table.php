@@ -18,6 +18,7 @@ class CreateRichListsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('wechat_users');
             $table->integer('wealth');
+            $table->decimal('scale',4,2);
             $table->timestamps();
         });
     }

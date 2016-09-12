@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>华瑞银行</title>
-<link rel="stylesheet" href="css/main.css" />
-<link rel="stylesheet" href="css/animate.css" />
-<script src="js/jquery-2.2.0.min.js"></script>
-<script src="js/easeljs-0.8.2.min.js"></script>
-<script src="js/preloadjs-0.6.2.min.js"></script>
-<script src="js/common.js"></script>
-<script src="js/luckDraw.js"></script>
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<script src="/js/jquery-2.2.0.min.js"></script>
+<script src="/js/easeljs-0.8.2.min.js"></script>
+<script src="/js/preloadjs-0.6.2.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/luckDraw.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="js/wx.js"></script>
+<script src="/js/wx.js"></script>
 <!--移动端版本兼容 -->
 <script type="text/javascript">
     var phoneWidth = parseInt(window.screen.width);
@@ -38,7 +38,7 @@
 
   <!--首页-->
   <div class="p1">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
@@ -47,7 +47,7 @@
 
         <!--预加载层-->
         <div class="preload-pop">
-          <img class="p1-goldShade" src="images/p1-goldshade.png" />
+          <img class="p1-goldShade" src="/images/p1-goldshade.png" />
           <div class="p1-goldBox"></div>
           <div class="p1-piont"></div>
           <p class="p1-percent"></p>
@@ -60,13 +60,13 @@
           <div class="p1-btn1"></div>
           <div class="p1-btn2"></div>
           <div class="p1-btn3"></div>
-          <img class="btn-piont" src="images/btn-piont.png" />
+          <img class="btn-piont" src="/images/btn-piont.png" />
           </div>
         </div>
         <!--首页按钮-->
 
-        <img class="p1-logo" src="images/p1-logo.png" />
-        <img class="p1-img3" src="images/p1-img3.png" />
+        <img class="p1-logo" src="/images/p1-logo.png" />
+        <img class="p1-img3" src="/images/p1-img3.png" />
 
       </div>
     </div>
@@ -75,16 +75,16 @@
 
   <!--榜单loading-->
   <div class="p2">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(images/sload-bg.jpg) no-repeat;"></div>
+    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/sload-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
-      	<img class="p2-gold" src="images/p2-gold.png" />
-        <img class="p2-piont" src="images/p2-piont.png" />
-        <img class="p2-img1" src="images/p2-img1.png" />
-        <img class="p2-d1" src="images/11.png" />
-        <img class="p2-d2" src="images/11.png" />
-        <img class="p2-d3" src="images/11.png" />
+      	<img class="p2-gold" src="/images/p2-gold.png" />
+        <img class="p2-piont" src="/images/p2-piont.png" />
+        <img class="p2-img1" src="/images/p2-img1.png" />
+        <img class="p2-d1" src="/images/11.png" />
+        <img class="p2-d2" src="/images/11.png" />
+        <img class="p2-d3" src="/images/11.png" />
 
     	</div>
     </div>
@@ -93,7 +93,7 @@
 
   <!--榜单-->
   <div class="p3">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
@@ -105,22 +105,22 @@
 
         <div class="p3-btn2">
           <div class="innerDiv">
-            <img src="images/p3-btn2.png" />
-            <img class="p3-piont1" src="images/p3-piont.png" />
-            <img class="p3-piont3" src="images/p3-piont.png" />
+            <img src="/images/p3-btn2.png" />
+            <img class="p3-piont1" src="/images/p3-piont.png" />
+            <img class="p3-piont3" src="/images/p3-piont.png" />
           </div>
         </div>
         <div class="p3-btn3">
           <div class="innerDiv">
-            <img src="images/p3-btn3.png" />
-            <img class="p3-piont2 p3-p1" src="images/p3-piont.png" />
-            <img class="p3-piont4 p3-p2" src="images/p3-piont.png" />
+            <img src="/images/p3-btn3.png" />
+            <img class="p3-piont2 p3-p1" src="/images/p3-piont.png" />
+            <img class="p3-piont4 p3-p2" src="/images/p3-piont.png" />
           </div>
         </div>
 
-        <img class="p3-img2 animated swing infinite" src="images/p3-img2.png" />
+        <img class="p3-img2 animated swing infinite" src="/images/p3-img2.png" />
 
-        <img class="p1-img3" src="images/p1-img3.png" />
+        <img class="p1-img3" src="/images/p1-img3.png" />
 
       </div>
     </div>
@@ -129,7 +129,7 @@
 
   <!--九宫格抽奖-->
   <div class="p4">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(images/box-bg.jpg) no-repeat;"></div>
+    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/box-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
@@ -140,16 +140,16 @@
           </ul>
         </div>
 
-        <img class="p4-light1 p4Light1" src="images/p4-light1.png" />
-        <img class="p4-light2" src="images/p4-light2.png" />
+        <img class="p4-light1 p4Light1" src="/images/p4-light1.png" />
+        <img class="p4-light2" src="/images/p4-light2.png" />
 
         <div class="bt1">
           <div class="innerDiv">
-            <img src="images/p4-start.png" />
+            <img src="/images/p4-start.png" />
           </div>
         </div>
 
-        <img class="p1-img3" src="images/p1-img3.png" />
+        <img class="p1-img3" src="/images/p1-img3.png" />
 
       </div>
     </div>
@@ -158,16 +158,16 @@
 
   <!--一等奖-->
   <div class="p5">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p5-bg.jpg) no-repeat;"></div>
+  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p5-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
-      	<img class="p5-img1" src="images/p5-img1.png" />
+      	<img class="p5-img1" src="/images/p5-img1.png" />
         <input class="name" type="text" />
         <input class="mobil" type="tel" maxlength="11" />
         <input class="adress" type="text" />
         <div class="ma">
-        	<img src="images/ma.png" />
+        	<img src="/images/ma.png" />
         </div>
         <a class="p5-btn" href="javascript:;"></a>
 
@@ -178,14 +178,14 @@
 
   <!--二等奖-->
   <div class="p6">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p6-bg.jpg) no-repeat;"></div>
+  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p6-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
         <p class="p6-info">格瓦拉电影票兑换码</p>
         <p class="p6-num">1240694003759234</p>
       	<div class="ma">
-        	<img src="images/ma.png" />
+        	<img src="/images/ma.png" />
         </div>
         <a class="p6-btn" href="javascript:;"></a>
 
@@ -196,14 +196,14 @@
 
   <!--三等奖-->
   <div class="p8">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p8-bg.jpg) no-repeat;"></div>
+  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p8-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
         <p class="p8-info">优酷7天会员资格</p>
         <p class="p8-num">1240694003759234</p>
       	<div class="ma">
-        	<img src="images/ma.png" />
+        	<img src="/images/ma.png" />
         </div>
         <a class="p6-btn" href="javascript:;"></a>
 
@@ -214,12 +214,12 @@
 
   <!--未中奖-->
   <div class="p7">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p7-bg.jpg) no-repeat;"></div>
+  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p7-bg.jpg) no-repeat;"></div>
     <div class="fix-height">
       <div class="relative">
 
       	<div class="ma">
-        	<img src="images/ma.png" />
+        	<img src="/images/ma.png" />
         </div>
         <a class="p6-btn" href="javascript:;"></a>
 
@@ -230,7 +230,7 @@
 
   <!--规则-->
   <div class="p9">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(images/p9-bg.jpg) no-repeat;"></div>
+    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/p9-bg.jpg) no-repeat;"></div>
       <div class="fix-height">
         <div class="relative">
 
@@ -238,9 +238,9 @@
           	<div class="p9-rule"></div>
           </div>
 
-          <div class="p9-close"><img src="images/p9-close.png" /></div>
+          <div class="p9-close"><img src="/images/p9-close.png" /></div>
 
-          <img class="p9-down" src="images/p9-down.png" />
+          <img class="p9-down" src="/images/p9-down.png" />
 
         </div>
       </div>
@@ -260,14 +260,14 @@ $.ajaxSetup({
 });
 var queue = new createjs.LoadQueue(false);
 queue.loadManifest([
-	{src:"images/box-bg.jpg", id:"jpg1"},
-	{src:"images/sload-bg.jpg", id:"jpg2"},
-	{src:"images/p5-bg.jpg", id:"jpg3"},
-	{src:"images/p6-bg.jpg", id:"jpg4"},
-	{src:"images/p7-bg.jpg", id:"jpg5"},
-	{src:"images/p8-bg.jpg", id:"jpg6"},
-	{src:"images/p9-bg.jpg", id:"jpg7"},
-	{src:"images/p9-img1.png", id:"jpg8"}
+	{src:"/images/box-bg.jpg", id:"jpg1"},
+	{src:"/images/sload-bg.jpg", id:"jpg2"},
+	{src:"/images/p5-bg.jpg", id:"jpg3"},
+	{src:"/images/p6-bg.jpg", id:"jpg4"},
+	{src:"/images/p7-bg.jpg", id:"jpg5"},
+	{src:"/images/p8-bg.jpg", id:"jpg6"},
+	{src:"/images/p9-bg.jpg", id:"jpg7"},
+	{src:"/images/p9-img1.png", id:"jpg8"}
 ]);
 queue.on("progress", function(){
 	$('.p1-percent').html((queue.progress * 100) + '%');
@@ -310,7 +310,12 @@ window.onload = function(){
 	//点击进入榜单按钮
 	$('.p1-btn1').on('touchend',function(){
 		$('.p2').fadeIn();
-        $.get('rich/list',function(html){
+        @if (!isset($id))
+        var url = '/rich/list';
+        @else
+        var url = '/rich/list/{{$id}}';
+        @endif
+        $.get(url,function(html){
             $('.p3-box').html(html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();
@@ -329,7 +334,7 @@ window.onload = function(){
   //点击保存榜单按钮,这里需要后台保存榜单功能，保存的同时执行下面的show()方法
   $('.p3-btn2').on('touchend',function () {
 
-    $.post('lottery',function(json){
+    $.post('/lottery',function(json){
         var prize = 0;
         if(json && json.ret == 0){
             prize = json.prize;
@@ -373,10 +378,16 @@ window.onload = function(){
 		$('.p3-piont4').removeClass('p3-p2').css('opacity',0);
 		$('.p3-piont1').addClass('p3-p1').css('opacity',1);
 		$('.p3-piont3').addClass('p3-p2').css('opacity',1);
-        $.get('rich/list',function(html){
-            $('.p3-box').html(html);
+        @if (!isset($id))
+        var url = '/rich/refresh';
+        @else
+        var url = '/rich/refresh/{{$id}}';
+        @endif
+        $.getJSON(url,function(json){
+            $('.p3-box').html(json.html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();
+            wxShare({link:json.link});
         })
 	});
 

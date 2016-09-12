@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('rich/list', 'HomeController@richList');
+Route::get('share/{id}', 'HomeController@share');
+Route::get('rich/list/{id?}', 'HomeController@richList');
+Route::get('rich/refresh/{id?}', 'HomeController@richRefresh');
 Route::post('info', 'HomeController@info');
 Route::post('lottery', 'HomeController@lottery');
 Route::get('/wx/share', function(){
