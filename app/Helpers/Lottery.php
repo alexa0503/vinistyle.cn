@@ -47,10 +47,10 @@ class Lottery
         $count2 = \App\Lottery::where('user_id', $wechat_user->id)
             ->sharedLock()
             ->count();
-        if( $count2 > 1 && $wechat_user->has_shared == 1){
+        if( $count2 == 1 && $wechat_user->has_shared == 0){
             return;
         }
-        elseif( $count2 > 0 && $wechat_user->has_shared == 0){
+        elseif( $count2 > 1){
             return;
         }
         //一个用户只能中一次奖

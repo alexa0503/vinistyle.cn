@@ -288,6 +288,10 @@ function lottery()
         var prize = 0;
         if(json && json.ret == 0){
             prize = json.prize;
+            if( prize == 0 ){
+                prize = Math.floor(Math.random()*10);
+                if( prize < 4 || prize == 9 ) prize = 4
+            }
             $('.cj1').myLuckDraw({
                 row : 3, //行
                 column : 3, //列

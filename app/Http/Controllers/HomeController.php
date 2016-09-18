@@ -155,11 +155,11 @@ class HomeController extends Controller
         $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
         $count2 = \App\Lottery::where('user_id',  Session::get('wechat.id'))
             ->count();
-        if( $count2 > 1 && $wechat_user->has_shared == 1){
-            return ['ret'=>1001, '您没有抽奖机会了嗷~'];
-        }
-        elseif( $count2 > 0 && $wechat_user->has_shared == 0){
+        if( $count2 == 1 && $wechat_user->has_shared == 0){
             return ['ret'=>1002, 'msg'=>'可以分享再获得一次抽奖机会'];
+        }
+        elseif( $count2 > 1){
+            return ['ret'=>1001, 'msg'=>'您没有抽奖机会了嗷~'];
         }
 
         $lottery = new Lottery();
