@@ -282,6 +282,44 @@
     </div>
 
 <script>
+function lottery()
+{
+    $.post('/lottery',function(json){
+        var prize = 0;
+        if(json && json.ret == 0){
+            prize = json.prize;
+            $('.cj1').myLuckDraw({
+                row : 3, //行
+                column : 3, //列
+                spacing: 1, //空隙
+                click : '.bt1', //点击触发
+                time: 1 ,//匀速运动的时间
+                end:function(e){
+                    if(e == 1){
+                        $('.p5').fadeIn();
+                    }
+                    else if(e == 2){
+                        $('.p6').fadeIn();
+                    }
+                    else if(e == 3){
+                        $('.p8').fadeIn();
+                    }
+                    else{
+                        $('.p7').fadeIn();
+                    }
+                    //抽奖执行完毕的回调函数,参数e为获奖编号
+                    //因为这里是指定的，所以e == 5
+                    //$('.jg1 em').text(e);
+                }
+            },prize); //这里tar是确定想要抽奖的目标是几号
+            $('.p4').fadeIn();
+        }
+        else{
+            alert(json.msg);
+        }
+
+    },"JSON");
+}
 $().ready(function(){
     wxShare();
 })
@@ -318,14 +356,22 @@ window.onload = function(){
 	timerPiont();
 
     ////////////////////////////////////////////////////新增JS///////////////////////////////////////////////////
-	//中奖点击规则
-	$('.p5-w1 a, .p6-w1 a, .p8-w1 a').on('touchend', function(){
+
+
+    //中奖点击规则
+	$('.p5-w2 a, .p6-w1 a, .p8-w1 a').on('touchend', function(){
 		$('.p9').show();
 	});
+
+    $('.p5-w1 a').on('touchend', function(){
+        $('.p10').show();
+        $('.p5').hide();
+    })
 
 	//关闭填写信息
 	$('.p10-close').on('touchend',function(){
 		$('.p10').hide();
+        $('.p5').show();
 	})
 
 	//信息提交
@@ -347,13 +393,21 @@ window.onload = function(){
 	});
 	////////////////////////////////////////////////////新增JS///////////////////////////////////////////////////
 
-    //中奖点击规则
-	$('.p5-w1 a, .p6-w1 a, .p8-w1 a').on('touchend', function(){
-		$('.p9').show();
-	});
+
 
 	//点击我的财富按钮，此处需要判断用户中了几等奖
 	$('.p1-btn3, .p3-btn1').on('touchend',function(){
+        $.getJSON('/award', function(json){
+            if(json && json.ret == 0){
+                var div = '.p'+(json.prize+4);
+                $(div).fadeIn();
+            }
+            else{
+                $('.p7').fadeIn();
+            }
+        }).fail(function(){
+            $('.p7').fadeIn();
+        });
 		//一等奖
 		//$('.p5').fadeIn();
 		//二等奖
@@ -366,7 +420,6 @@ window.onload = function(){
 	})
     $('.p3-btn1').on('touchend', function(){
         //$('.p2').fadeIn();
-
     });
 
 	//点击进入抽奖页面
@@ -400,38 +453,7 @@ window.onload = function(){
 
   //点击保存榜单按钮,这里需要后台保存榜单功能，保存的同时执行下面的show()方法
   $('.p3-btn2').on('touchend',function () {
-
-    $.post('/lottery',function(json){
-        var prize = 0;
-        if(json && json.ret == 0){
-            prize = json.prize;
-        }
-        $('.cj1').myLuckDraw({
-            row : 3, //行
-            column : 3, //列
-            spacing: 1, //空隙
-            click : '.bt1', //点击触发
-            time: 1 ,//匀速运动的时间
-            end:function(e){
-                if(e == 1){
-                    $('.p5').fadeIn();
-                }
-                else if(e == 2){
-                    $('.p6').fadeIn();
-                }
-                else if(e == 3){
-                    $('.p8').fadeIn();
-                }
-                else{
-                    $('.p7').fadeIn();
-                }
-                //抽奖执行完毕的回调函数,参数e为获奖编号
-                //因为这里是指定的，所以e == 5
-                //$('.jg1 em').text(e);
-            }
-        },prize); //这里tar是确定想要抽奖的目标是几号
-        $('.p4').fadeIn();
-    },"JSON");
+      lottery();
   })
 
 

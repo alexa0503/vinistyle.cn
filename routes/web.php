@@ -17,6 +17,8 @@ Route::get('rich/list/{id?}', 'HomeController@richList');
 Route::get('rich/refresh/{id?}', 'HomeController@richRefresh');
 Route::post('info', 'HomeController@info');
 Route::post('lottery', 'HomeController@lottery');
+Route::get('award', 'HomeController@award');
+Route::post('share', 'HomeController@wxShare');
 Route::get('/wx/share', function(){
     $url = urldecode(Request::get('url'));
     $_share = [

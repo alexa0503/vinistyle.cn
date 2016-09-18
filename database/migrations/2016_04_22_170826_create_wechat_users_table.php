@@ -23,6 +23,7 @@ class CreateWechatUsersTable extends Migration
                 $table->string('country',60);
                 $table->string('province',60);
                 $table->string('city',60);
+                $table->boolean('has_shared')->default(0);
                 //$table->dateTime('create_time');
                 $table->string('ip_address',120)->nullable();
                 $table->timestamps();

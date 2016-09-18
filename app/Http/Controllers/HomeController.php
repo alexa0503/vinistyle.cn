@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Session;
-
+use App\Helpers\Lottery;
 class HomeController extends Controller
 {
     public function __construct()
@@ -152,7 +152,36 @@ class HomeController extends Controller
     }
     public function lottery()
     {
-        $prize = rand(1,4);
+        $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
+        $count2 = \App\Lottery::where('user_id',  Session::get('wechat.id'))
+            ->count();
+        if( $count2 > 1 && $wechat_user->has_shared == 1){
+            return ['ret'=>1001, '您没有抽奖机会了嗷~'];
+        }
+        elseif( $count2 > 0 && $wechat_user->has_shared == 0){
+            return ['ret'=>1002, 'msg'=>'可以分享再获得一次抽奖机会'];
+        }
+
+        $lottery = new Lottery();
+        $prize = $lottery->run();
+        if( $prize == null) $prize = 0;
         return ['prize'=>$prize, 'ret'=>0];
+    }
+    public function award()
+    {
+        $lottery = App\Lottery::where('user_id', Session::get('wechat.id'))
+            ->whereNotNull('prize_id')
+            ->first();
+        if(null != $lottery){
+            return ['ret'=>0,'prize'=>$lottery->prize_id];
+        }
+        return ['ret'=>1001];
+    }
+    public function wxShare()
+    {
+        $user = App\WechatUser::find(Session::get('wechat.id'));
+        $user->has_shared = 1;
+        $user->save();
+        return ['ret'=>0];
     }
 }

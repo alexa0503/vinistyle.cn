@@ -1,5 +1,5 @@
 <?php
-namespace App\Helper;
+namespace App\Helpers;
 use Carbon\Carbon;
 class Lottery
 {
@@ -43,12 +43,19 @@ class Lottery
         $timestamp = $this->timestamp;
         $wechat_user = $this->wechat_user;
 
-        //判断当日是否中奖,已中奖则不发奖
+        //一个用户一次抽奖几乎,分享后可再抽一次奖
+        $count2 = \App\Lottery::where('user_id', $wechat_user->id)
+            ->sharedLock()
+            ->count();
+        if( $count2 > 1 && $wechat_user->has_shared == 1){
+            return;
+        }
+        elseif( $count2 > 0 && $wechat_user->has_shared == 0){
+            return;
+        }
         //一个用户只能中一次奖
         $count1 = \App\Lottery::where('user_id', $wechat_user->id)
-            ->where('prize_id', '>', 0)
-            //->where('lottery_time', '>=', date('Y-m-d', $timestamp))
-            //->where('lottery_time', '<=', date('Y-m-d 23:59:59', $timestamp))
+            ->whereNotNull('prize_id')
             ->sharedLock()
             ->count();
         if( $count1 > 0 ){
@@ -111,14 +118,7 @@ class Lottery
             }
             $this->prize_config_id = $prize_config->id;
         }
-        //判断该用户是否中过此奖项
-        $count2 = \App\Lottery::where('user_id', $wechat_user->id)
-        ->where('prize_id', $prize->id)
-        ->sharedLock()
-        ->count();
-        if( $count2 > 0){
-            return;
-        }
+
         $this->prize_id = $prize->id;
         return;
     }
