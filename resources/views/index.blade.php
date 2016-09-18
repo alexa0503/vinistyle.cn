@@ -134,7 +134,7 @@
 
       <!--九宫格抽奖-->
       <div class="p4">
-        <div class="bgimg" style="width:640px; height:1039px; background:url(images/box-bg.jpg) no-repeat;"></div>
+        <div class="bgimg" style="width:640px; height:1039px; background:url(/images/box-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -163,7 +163,7 @@
 
       <!--一等奖-->
       <div class="p5">
-      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p5-bg.jpg) no-repeat;"></div>
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p5-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -186,7 +186,7 @@
 
       <!--二等奖-->
       <div class="p6">
-      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p6-bg.jpg) no-repeat;"></div>
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p6-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -206,7 +206,7 @@
 
       <!--三等奖-->
       <div class="p8">
-      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p8-bg.jpg) no-repeat;"></div>
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p8-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -226,7 +226,7 @@
 
       <!--未中奖-->
       <div class="p7">
-      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p7-bg.jpg) no-repeat;"></div>
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p7-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -242,7 +242,7 @@
 
       <!--规则-->
       <div class="p9">
-        <div class="bgimg" style="width:640px; height:1039px; background:url(images/p9-bg.jpg) no-repeat;"></div>
+        <div class="bgimg" style="width:640px; height:1039px; background:url(/images/p9-bg.jpg) no-repeat;"></div>
           <div class="fix-height">
             <div class="relative">
 
@@ -261,7 +261,7 @@
 
       <!--填写信息-->
       <div class="p10">
-      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p10-bg.jpg) no-repeat;"></div>
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p10-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
