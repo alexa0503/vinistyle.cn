@@ -1,5 +1,5 @@
 /* Global Setting */
-body{margin:0; padding:0;text-align:left; font-size:12px; font-family:'Microsoft YaHei',Arial; background:#FFF;-webkit-touch-callout:none;}
+body{margin:0; padding:0;text-align:left; font-size:12px; font-family:'Microsoft YaHei',Arial; background:#FFF;}
 table{border-collapse:collapse;}
 td,th{padding:0;}
 ul,li,dd,dl,dt{margin:0; padding:0; list-style:none; word-break:break-all;}
@@ -47,55 +47,48 @@ select,input,textarea{font-family:inherit; outline:none;}
 .btn-piont{ position:absolute; left:-2px; top:-4px; -webkit-animation:piontFadeOut 7s infinite linear;}
 @-webkit-keyframes piontFadeOut{
 	0%{
-		left:-4px;
-		top:-8px;
+		left:0px;
+		top:-4px;
 		opacity:1;
 	}
 	15%{
-		left:315px;
-		top:-8px;
+		left:317px;
+		top:-4px;	
 		opacity:1;
 	}
-	32.9%{
-		left:315px;
-		top:61px;
+	32%{
+		left:317px;
+		top:65px;
 		opacity:0;
 	}
 	33%{
-		left:315px;
-		top:94px;
+		left:317px;
+		top:98px;
 		opacity:1;
 	}
 	48%{
-		left:-4px;
-		top:94px;
+		left:0px;
+		top:98px;
 		opacity:1;
 	}
-	65.9%{
-		left:-4px;
-		top:161px;
-		opacity:0;
+	65%{
+		left:0px;
+		top:165px;
+		opacity:0;	
 	}
 	66%{
-		left:-4px;
-		top:193px;
-		opacity:1;
+		left:0px;
+		top:197px;
+		opacity:1;		
 	}
 	81%{
-		left:315px;
-		top:193px;
+		left:317px;
+		top:197px;
 		opacity:1;
-		-webkit-transform:scale(1);
-	}
-	98%{
-		left:315px;
-		top:257px;
-		opacity:1;
-		-webkit-transform:scale(2);
 	}
 	100%{
-		left:315px;
-		top:257px;
+		left:317px;
+		top:261px;
 		opacity:0;
 	}
 }
@@ -120,14 +113,14 @@ select,input,textarea{font-family:inherit; outline:none;}
 .p3-box{ width: 578px; position: absolute; left: 31px; top: 142px;}
 .myTable tr{ font-size: 19px; color: #a79783; text-align: center;}
 .myTable tr img{ padding: 27px 0 0 8px;}
-.myTable .first{ font-size: 22px; color: #f3e7c0 ; text-align: center; font-weight:bold;}
+.myTable tr td{ line-height: 60px;}
+.myTable .first{ font-size: 22px; color: #f3e7c0; text-align: center; font-weight:bold;}
 .myTable .first img{ padding: 28px 0 0 5px;}
 .myTable tr{ border-bottom: 1px dashed #565b62;}
 .myTable tr:nth-child(odd){ background-color: rgba(53,60,68,.6);}
-.myTable tr td{ line-height: 60px; overflow:hidden; white-space: nowrap; text-overflow: ellipsis;}
-.myTable{ table-layout:fixed;}
 #tableNav{ border:none; background:none;}
 #tableNav td{ font-size:17px; color:#FFF;}
+.p3-btn1{ width: 287px; height: 65px; background: url("../images/p3-btn1.png") no-repeat; position: absolute; left: 177px; top: 852px; display: none;}
 .p3-piont1{ position: absolute; left:108px; top:-8px; opacity:0;}
 .p3-piont2{ position: absolute; left:108px; top:-8px;}
 .p3-piont3{ position: absolute; left:108px; top:56px; opacity:0;}
@@ -177,11 +170,11 @@ select,input,textarea{font-family:inherit; outline:none;}
 	}
 	65%{
 		left:226px;
-		top:-8px;
+		top:-8px;	
 	}
 	85%{
 		left:226px;
-		top:56px;
+		top:56px;	
 	}
 	100%{
 		left:108px;
@@ -189,8 +182,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 	}
 }
 .p3-img2{ position: absolute; left: 35px; top: 196px;}
-.p3-btn2{ width: 236px; height: 65px; background: url("../images/p3-btnBg.png") no-repeat; position: absolute; left: 74px; top: 844px;}
-.p3-btn3{ width: 236px; height: 65px; background: url("../images/p3-btnBg.png") no-repeat; position: absolute; left: 330px; top: 844px;}
+.p3-btn2{ width: 236px; height: 65px; position: absolute; left: 74px; top: 844px;}
+.p3-btn3{ width: 236px; height: 65px; position: absolute; left: 330px; top: 844px;}
 @-webkit-keyframes fadeGo{
 	0%{
 		opacity: 1;
@@ -201,7 +194,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 }
 
 /*九宫格抽奖*/
-.p4{ display:none;}
+.p4{}
 .p4-img1{ width: 435px; height: 84px; background: url("../images/p4-img1.png") no-repeat; position: absolute; left: 102px; top: 89px;}
 .myBox{ width: 536px; height: 536px; background: url("../images/p4-box.png") no-repeat; position: absolute; left: 52px; top: 268px;}
 .myBox ul{margin:0 auto 0;position:relative;width:536px;height:536px;overflow:hidden;}
@@ -219,16 +212,16 @@ select,input,textarea{font-family:inherit; outline:none;}
 @-webkit-keyframes btnScale{
 	0%{
 		opacity:1;
-		-webkit-transform:scale(1);
+		-webkit-transform:scale(1); 	
 	}
 	50%{
 		opacity:1;
-		-webkit-transform:scale(1.1);
-	}
+		-webkit-transform:scale(1.1); 	
+	}	
 	100%{
 		opacity:0;
-		-webkit-transform:scale(1);
-	}
+		-webkit-transform:scale(1); 	
+	}	
 }
 .p4-light1{ position:absolute; left:35px; top:258px; opacity:0.8}
 .p4-light2{ position:absolute; left:52px; top:350px;}
@@ -243,73 +236,56 @@ select,input,textarea{font-family:inherit; outline:none;}
 		opacity:0;
 	}
 	100%{
-		opacity:0;
-	}
+		opacity:0;	
+	}	
 }*/
 
 /*一等奖*/
-.p5{ display:none; position:relative; z-index:99px;}
+.p5{ display:none;}
 .p5-img1{ position:absolute; left:238px; top:62px;}
 .p5-img2{ position:absolute;}
-.p5-w1{ position:absolute; left:187px; top:368px; font-size:20px; color:#ae8c65; z-index:11;}
-.p5-w2{ position:absolute; left:176px; top:398px; font-size:20px; color:#ae8c65; z-index:11;}
-.p5-w3{ width:100%; position:absolute; top:436px; text-align:center; font-size:20px; color:#ae8c65; z-index:11;}
-.p5-w1 a, .p5-w2 a{ color:#f6f2bf; text-decoration:underline;}
-.ma{ position:absolute; left:0; top:308px; z-index:10;}
-.ma img{  padding-top:278px;}
-.p5-btn{ width:255px; height:66px; position:absolute; left:192px; top:477px; z-index:11;}
+.p5 input{ background:none; border:none; -webkit-tap-highlight-color:rgba(255,0,0,0); color:#ae8c65; font-size:25px; line-height:39px;}
+.name{ width:119px; height:39px; position:absolute; left:160px; top:371px; padding-left:10px;}
+.mobil{ width:158px; height:39px; position:absolute; left:399px; top:371px; font-size:20px;}
+.adress{ width:346px; height:39px; position:absolute; left:212px; top:426px; padding-left:10px;}
+.ma{ position:absolute; left:0; top:708px;}
+.p5-btn{ width:238px; height:66px; position:absolute; left:201px; top:616px;}
 
 /*二等奖*/
-.p6{ display:none; position:relative; z-index:99px;}
+.p6{ display:none;}
 .p6-btn{ width:238px; height:66px; position:absolute; left:201px; top:572px;}
 .p6-info{ width:100%; position:absolute; left:0px; top:256px; font-size:37px; color:#ae8c65; text-align:center;}
 .p6-num{ width:100%; position:absolute; left:0px; top:320px; font-size:37px; color:#ae8c65; text-align:center;}
-.p6-w1{ width:100%; position:absolute; left:79px; top:423px; font-size:20px; color:#ae8c65; z-index:11;}
-.p6-w2{ width:100%; position:absolute; left:162px; top:472px; font-size:20px; color:#ae8c65; z-index:11;}
-.p6-w1 a{ color:#f6f2bf; text-decoration:underline;}
-.p6-btn{ width:255px; height:66px; position:absolute; left:192px; top:522px; z-index:11;}
-.ma1{ position:absolute; left:0; top:308px; z-index:10;}
-.ma1 img{  padding-top:302px;}
 
 /*未中奖*/
-.p7{ display:none; position:relative; z-index:99px;}
+.p7{ display:none;}
 
 /*三等奖*/
-.p8{ display:none; position:relative; z-index:99px;}
+.p8{ display:none;}
 .p8-info{ width:100%; position:absolute; left:0px; top:256px; font-size:37px; color:#ae8c65; text-align:center;}
 .p8-num{ width:100%; position:absolute; left:0px; top:320px; font-size:37px; color:#ae8c65; text-align:center;}
 
 /*朋友圈分享层*/
-.share{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:101; display:none;}
+.share{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:99; display:none;}
 .shadow{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000000; opacity:0.6;}
 .shareImg{ position:absolute; left:275px; top:20px;}
 
 /*规则*/
-.p9{ display:none; position:relative; z-index:100;}
+.p9{ display:none;}
 .p9-box{ width:476px; height:708px; position:absolute; left:82px; top:224px; overflow-y:scroll;}
-.p9-close{ position:absolute; right:46px; top:30px;}
 .p9-rule{ width:476px; height:1720px; background:url(../images/p9-img1.png) no-repeat;}
+.p9-close{ position:absolute; left:546px; top:32px;}
 .p9-down{ position:absolute; left:304px; top:898px; opacity:1; -webkit-animation:p9downFade 4s infinite linear;}
 @-webkit-keyframes p9downFade{
 	0%{
-		opacity:1;
+		opacity:1;	
 	}
 	50%{
-		opacity:0;
-	}
+		opacity:0; 	
+	}	
 	100%{
-		opacity:1;
-	}
+		opacity:1; 	
+	}	
 }
-
-/*填写信息*/
-.p10{ display:none; position:relative; z-index:99px;}
-.p10 input{ background:none; border:none; -webkit-tap-highlight-color:rgba(255,0,0,0); color:#ae8c65;line-height:39px;}
-.name{ width:349px; height:38px; position:absolute; left:146px; top:333px; padding-left:10px; font-size:25px; z-index:11;}
-.mobil{ width:349px; height:38px; position:absolute; left:146px; top:455px; font-size:20px; z-index:11;}
-.adress{ width:349px; height:38px; position:absolute; left:146px; top:594px; padding-left:10px; font-size:25px; z-index:11;}
-.p10-btn{ width: 256px; height:64px; position:absolute; left:181px; top:695px;}
-.p10-close{ position:absolute; right:46px; top:30px;}
-
 
 

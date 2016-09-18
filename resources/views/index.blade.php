@@ -34,221 +34,253 @@
 </head>
 
 <body>
-<div class="wrap">
+    <div class="wrap">
+    	<!--朋友圈分享-->
+      <div class="share">
+      	<div class="shadow"></div>
+        <img class="shareImg" src="images/share.png" />
+      </div>
+      <!--朋友圈分享-->
 
-  <!--首页-->
-  <div class="p1">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
+      <!--首页-->
+      <div class="p1">
+        <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
 
-        <div class="p1-img1"></div>
-        <div class="p1-img2"></div>
+            <div class="p1-img1"></div>
+            <div class="p1-img2"></div>
 
-        <!--预加载层-->
-        <div class="preload-pop">
-          <img class="p1-goldShade" src="/images/p1-goldshade.png" />
-          <div class="p1-goldBox"></div>
-          <div class="p1-piont"></div>
-          <p class="p1-percent"></p>
-        </div>
-        <!--预加载层-->
+            <!--预加载层-->
+            <div class="preload-pop">
+              <img class="p1-goldShade" src="images/p1-goldshade.png" />
+              <div class="p1-goldBox"></div>
+              <div class="p1-piont"></div>
+              <p class="p1-percent"></p>
+            </div>
+            <!--预加载层-->
 
-        <!--首页按钮-->
-        <div class="btn-group">
-          <div class="innerDiv">
-          <div class="p1-btn1"></div>
-          <div class="p1-btn2"></div>
-          <div class="p1-btn3"></div>
-          <img class="btn-piont" src="/images/btn-piont.png" />
+            <!--首页按钮-->
+            <div class="btn-group">
+              <div class="innerDiv">
+              <div class="p1-btn1"></div>
+              <div class="p1-btn2"></div>
+              <div class="p1-btn3"></div>
+              <img class="btn-piont" src="images/btn-piont.png" />
+              </div>
+            </div>
+            <!--首页按钮-->
+
+            <img class="p1-logo" src="images/p1-logo.png" />
+            <img class="p1-img3" src="images/p1-img3.png" />
+
           </div>
         </div>
-        <!--首页按钮-->
-
-        <img class="p1-logo" src="/images/p1-logo.png" />
-        <img class="p1-img3" src="/images/p1-img3.png" />
-
       </div>
-    </div>
-  </div>
-  <!--首页结束-->
+      <!--首页结束-->
 
-  <!--榜单loading-->
-  <div class="p2">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/sload-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
+      <!--榜单loading-->
+      <div class="p2">
+        <div class="bgimg" style="width:640px; height:1039px; background:url(images/sload-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
 
-      	<img class="p2-gold" src="/images/p2-gold.png" />
-        <img class="p2-piont" src="/images/p2-piont.png" />
-        <img class="p2-img1" src="/images/p2-img1.png" />
-        <img class="p2-d1" src="/images/11.png" />
-        <img class="p2-d2" src="/images/11.png" />
-        <img class="p2-d3" src="/images/11.png" />
+          	<img class="p2-gold" src="images/p2-gold.png" />
+            <img class="p2-piont" src="images/p2-piont.png" />
+            <img class="p2-img1" src="images/p2-img1.png" />
+            <img class="p2-d1" src="images/11.png" />
+            <img class="p2-d2" src="images/11.png" />
+            <img class="p2-d3" src="images/11.png" />
 
-    	</div>
-    </div>
-  </div>
-  <!--榜单loading-->
-
-  <!--榜单-->
-  <div class="p3">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
-
-        <div class="p3-img1"></div>
-        <div class="p3-box">
-
+        	</div>
         </div>
+      </div>
+      <!--榜单loading-->
 
+      <!--榜单-->
+      <div class="p3">
+        <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
 
-        <div class="p3-btn2">
-          <div class="innerDiv">
-            <img src="/images/p3-btn2.png" />
-            <img class="p3-piont1" src="/images/p3-piont.png" />
-            <img class="p3-piont3" src="/images/p3-piont.png" />
+            <div class="p3-img1"></div>
+            <div class="p3-box">
+
+            </div>
+
+            <div class="p3-btn2">
+              <div class="innerDiv">
+                <img src="images/p3-btn2.png" />
+                <img class="p3-piont1" src="images/p3-piont.png" />
+                <img class="p3-piont3" src="images/p3-piont.png" />
+              </div>
+            </div>
+            <div class="p3-btn3">
+              <div class="innerDiv">
+                <img src="images/p3-btn3.png" />
+                <img class="p3-piont2 p3-p1" src="images/p3-piont.png" />
+                <img class="p3-piont4 p3-p2" src="images/p3-piont.png" />
+              </div>
+            </div>
+
+            <img class="p3-img2" src="images/p3-img2.png" />
+
+            <img class="p1-img3" src="images/p1-img3.png" />
+
           </div>
         </div>
-        <div class="p3-btn3">
-          <div class="innerDiv">
-            <img src="/images/p3-btn3.png" />
-            <img class="p3-piont2 p3-p1" src="/images/p3-piont.png" />
-            <img class="p3-piont4 p3-p2" src="/images/p3-piont.png" />
+      </div>
+      <!--榜单-->
+
+      <!--九宫格抽奖-->
+      <div class="p4">
+        <div class="bgimg" style="width:640px; height:1039px; background:url(images/box-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
+
+            <div class="p4-img1"></div>
+            <div class="myBox">
+              <ul class="cj1">
+                <li></li>
+              </ul>
+            </div>
+
+            <img class="p4-light1 p4Light1" src="images/p4-light1.png" />
+            <img class="p4-light2" src="images/p4-light2.png" />
+
+            <div class="bt1">
+              <div class="innerDiv">
+                <img src="images/p4-start.png" />
+              </div>
+            </div>
+
+            <img class="p1-img3" src="images/p1-img3.png" />
+
           </div>
         </div>
-
-        <img class="p3-img2 animated swing infinite" src="/images/p3-img2.png" />
-
-        <img class="p1-img3" src="/images/p1-img3.png" />
-
       </div>
-    </div>
-  </div>
-  <!--榜单-->
+      <!--九宫格抽奖-->
 
-  <!--九宫格抽奖-->
-  <div class="p4">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/box-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
+      <!--一等奖-->
+      <div class="p5">
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p5-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
 
-        <div class="p4-img1"></div>
-        <div class="myBox">
-          <ul class="cj1">
-            <li></li>
-          </ul>
-        </div>
+          	<img class="p5-img1" src="images/p5-img1.png" />
+            <p class="p5-w1">*点击填写<a href="javascript:;">个人完整中奖信息</a></p>
+            <p class="p5-w2">*详情点击<a href="javascript:;">兑换方式及活动细则</a></p>
+            <p class="p5-w3">晒出你的专属2016华氏全球富豪榜</p>
+            <!--<input class="name" type="text" />
+            <input class="mobil" type="tel" maxlength="11" />
+            <input class="adress" type="text" />-->
+            <div class="ma">
+            	<img src="images/ma.png" />
+            </div>
+            <a class="p5-btn" href="javascript:;"></a>
 
-        <img class="p4-light1 p4Light1" src="/images/p4-light1.png" />
-        <img class="p4-light2" src="/images/p4-light2.png" />
-
-        <div class="bt1">
-          <div class="innerDiv">
-            <img src="/images/p4-start.png" />
           </div>
         </div>
-
-        <img class="p1-img3" src="/images/p1-img3.png" />
-
       </div>
-    </div>
-  </div>
-  <!--九宫格抽奖-->
+      <!--一等奖-->
 
-  <!--一等奖-->
-  <div class="p5">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p5-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
+      <!--二等奖-->
+      <div class="p6">
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p6-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
 
-      	<img class="p5-img1" src="/images/p5-img1.png" />
-        <input class="name" type="text" />
-        <input class="mobil" type="tel" maxlength="11" />
-        <input class="adress" type="text" />
-        <div class="ma">
-        	<img src="/images/ma.png" />
-        </div>
-        <a class="p5-btn" href="javascript:;"></a>
+            <p class="p6-info">格瓦拉电影票兑换码</p>
+            <p class="p6-num">1240694003759234</p>
+            <p class="p6-w1">*截屏保留中奖信息，详情点击<a href="javascript:;">兑换方式及活动细则</a></p>
+            <p class="p6-w2">晒出你的专属2016华氏全球富豪榜</p>
+          	<div class="ma1">
+            	<img src="images/ma.png" />
+            </div>
+            <a class="p6-btn" href="javascript:;"></a>
 
-      </div>
-    </div>
-  </div>
-  <!--一等奖-->
-
-  <!--二等奖-->
-  <div class="p6">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p6-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
-
-        <p class="p6-info">格瓦拉电影票兑换码</p>
-        <p class="p6-num">1240694003759234</p>
-      	<div class="ma">
-        	<img src="/images/ma.png" />
-        </div>
-        <a class="p6-btn" href="javascript:;"></a>
-
-      </div>
-    </div>
-  </div>
-  <!--二等奖-->
-
-  <!--三等奖-->
-  <div class="p8">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p8-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
-
-        <p class="p8-info">优酷7天会员资格</p>
-        <p class="p8-num">1240694003759234</p>
-      	<div class="ma">
-        	<img src="/images/ma.png" />
-        </div>
-        <a class="p6-btn" href="javascript:;"></a>
-
-      </div>
-    </div>
-  </div>
-  <!--三等奖-->
-
-  <!--未中奖-->
-  <div class="p7">
-  	<div class="bgimg" style="width:640px; height:1039px; background:url(/images/p7-bg.jpg) no-repeat;"></div>
-    <div class="fix-height">
-      <div class="relative">
-
-      	<div class="ma">
-        	<img src="/images/ma.png" />
-        </div>
-        <a class="p6-btn" href="javascript:;"></a>
-
-      </div>
-    </div>
-  </div>
-  <!--未中奖-->
-
-  <!--规则-->
-  <div class="p9">
-    <div class="bgimg" style="width:640px; height:1039px; background:url(/images/p9-bg.jpg) no-repeat;"></div>
-      <div class="fix-height">
-        <div class="relative">
-
-        	<div class="p9-box">
-          	<div class="p9-rule"></div>
           </div>
-
-          <div class="p9-close"><img src="/images/p9-close.png" /></div>
-
-          <img class="p9-down" src="/images/p9-down.png" />
-
         </div>
       </div>
-  </div>
-  <!--规则-->
+      <!--二等奖-->
+
+      <!--三等奖-->
+      <div class="p8">
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p8-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
+
+            <p class="p8-info">优酷7天会员资格</p>
+            <p class="p8-num">1240694003759234</p>
+            <p class="p6-w1">*截屏保留中奖信息，详情点击<a href="javascript:;">兑换方式及活动细则</a></p>
+            <p class="p6-w2">晒出你的专属2016华氏全球富豪榜</p>
+          	<div class="ma1">
+            	<img src="images/ma.png" />
+            </div>
+            <a class="p6-btn" href="javascript:;"></a>
+
+          </div>
+        </div>
+      </div>
+      <!--三等奖-->
+
+      <!--未中奖-->
+      <div class="p7">
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p7-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
+
+          	<div class="ma1">
+            	<img src="images/ma.png" />
+            </div>
+            <a class="p6-btn" href="javascript:;"></a>
+
+          </div>
+        </div>
+      </div>
+      <!--未中奖-->
+
+      <!--规则-->
+      <div class="p9">
+        <div class="bgimg" style="width:640px; height:1039px; background:url(images/p9-bg.jpg) no-repeat;"></div>
+          <div class="fix-height">
+            <div class="relative">
+
+            	<div class="p9-box">
+              	<div class="p9-rule"></div>
+              </div>
+
+              <a class="p9-close"><img src="images/p9-close.png" /></a>
+
+              <img class="p9-down" src="images/p9-down.png" />
+
+            </div>
+          </div>
+      </div>
+      <!--规则-->
+
+      <!--填写信息-->
+      <div class="p10">
+      	<div class="bgimg" style="width:640px; height:1039px; background:url(images/p10-bg.jpg) no-repeat;"></div>
+        <div class="fix-height">
+          <div class="relative">
+
+            <a class="p10-close" href="javascript:;"><img src="images/p9-close.png" /></a>
+
+            <input class="name" type="text" />
+            <input class="mobil" type="tel" maxlength="11" />
+            <input class="adress" type="text" />
+
+            <a class="p10-btn" href="javascript:;"></a>
+
+          </div>
+        </div>
+      </div>
+      <!--填写信息-->
 
 
-</div>
+    </div>
+
 <script>
 $().ready(function(){
     wxShare();
@@ -284,6 +316,41 @@ window.onload = function(){
 	p6fourSpace();
 	p8fourSpace();
 	timerPiont();
+
+    ////////////////////////////////////////////////////新增JS///////////////////////////////////////////////////
+	//中奖点击规则
+	$('.p5-w1 a, .p6-w1 a, .p8-w1 a').on('touchend', function(){
+		$('.p9').show();
+	});
+
+	//关闭填写信息
+	$('.p10-close').on('touchend',function(){
+		$('.p10').hide();
+	})
+
+	//信息提交
+	$('.p10-btn').on('touchend',function(){
+		var tName	= $('.name').val();
+		var tMobile	= $('.mobil').val();
+		var len = tMobile.length;
+		var tAdress	= $('.adress').val();
+		if( tName == '' || tMobile == '' || tAdress == '' ){
+			alert('请完整填写信息');
+		}else{
+			if(len<11){
+				alert('重新填写手机号');
+		}	else{
+				//这里提交信息
+				alert('来提交');
+			}
+		}
+	});
+	////////////////////////////////////////////////////新增JS///////////////////////////////////////////////////
+
+    //中奖点击规则
+	$('.p5-w1 a, .p6-w1 a, .p8-w1 a').on('touchend', function(){
+		$('.p9').show();
+	});
 
 	//点击我的财富按钮，此处需要判断用户中了几等奖
 	$('.p1-btn3, .p3-btn1').on('touchend',function(){

@@ -21,7 +21,7 @@ $('document').ready(function () {
             });
         },
         error: function () {
-            if( data.debug ){
+            if( wxData.debug ){
                 alert('请求微信分享接口失败~');
             }
             console.log('请求微信分享接口失败~');
