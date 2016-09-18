@@ -44,7 +44,7 @@
 
       <!--首页-->
       <div class="p1">
-        <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+        <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -81,7 +81,7 @@
 
       <!--榜单loading-->
       <div class="p2">
-        <div class="bgimg" style="width:640px; height:1039px; background:url(images/sload-bg.jpg) no-repeat;"></div>
+        <div class="bgimg" style="width:640px; height:1039px; background:url(/images/sload-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
@@ -99,7 +99,7 @@
 
       <!--榜单-->
       <div class="p3">
-        <div class="bgimg" style="width:640px; height:1039px; background:url(images/noBox-bg.jpg) no-repeat;"></div>
+        <div class="bgimg" style="width:640px; height:1039px; background:url(/images/noBox-bg.jpg) no-repeat;"></div>
         <div class="fix-height">
           <div class="relative">
 
