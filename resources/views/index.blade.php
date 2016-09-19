@@ -285,6 +285,7 @@
 function lottery()
 {
     $.post('/lottery',function(json){
+        $('.p5,.p6,.p7').hide();
         var prize = 0;
         if(json && json.ret == 0){
             prize = json.prize;
@@ -312,8 +313,8 @@ function lottery()
                         else{
                             $('.p7').fadeIn();
                         }
+                        wxShare({shared:1});
                     },500)
-
                     //抽奖执行完毕的回调函数,参数e为获奖编号
                     //因为这里是指定的，所以e == 5
                     //$('.jg1 em').text(e);

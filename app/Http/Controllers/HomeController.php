@@ -162,6 +162,9 @@ class HomeController extends Controller
             return ['ret'=>1002, 'msg'=>'可以分享再获得一次抽奖机会'];
         }
         elseif( $count2 > 1){
+            //超过1次后重置分享flag
+            $wechat_user->has_shared = 0;
+            $wechat_user->save();
             return ['ret'=>1001, 'msg'=>'今天您没有抽奖机会了嗷~'];
         }
 
@@ -182,9 +185,21 @@ class HomeController extends Controller
     }
     public function wxShare()
     {
+        $timestamp = time();
+        $count = \App\Lottery::where('user_id',  Session::get('wechat.id'))
+            ->where('lottery_time', '>=', date('Y-m-d', $timestamp))
+            ->where('lottery_time', '<=', date('Y-m-d 23:59:59', $timestamp))
+            ->count();
         $user = App\WechatUser::find(Session::get('wechat.id'));
-        $user->has_shared = 1;
-        $user->save();
-        return ['ret'=>0];
+        if($count == 1){
+            $user->has_shared = 1;
+            $user->save();
+            return ['ret'=>0];
+        }
+        else{
+            return ['ret'=>1001];
+        }
+
+
     }
 }

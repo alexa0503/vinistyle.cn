@@ -38,11 +38,13 @@ function wxShare(data){
             imgUrl: wxData.imgUrl,
             trigger: function (res) {},
             success: function (res) {
-                $.post('/share',function(json){
-                    if(json && json.ret == 0){
-                        lottery();
-                    }
-                },"JSON");
+                if( wxData.shared == 1){
+                    $.post('/share',function(json){
+                        if(json && json.ret == 0){
+                            lottery();
+                        }
+                    },"JSON");
+                }
             },
             cancel: function (res) {},
             fail: function (res) {}
@@ -53,11 +55,13 @@ function wxShare(data){
             imgUrl: wxData.imgUrl,
             trigger: function (res) {},
             success: function (res) {
-                $.post('/share',function(json){
-                    if(json && json.ret == 0){
-                        lottery();
-                    }
-                },"JSON");
+                if( wxData.shared == 1){
+                    $.post('/share',function(json){
+                        if(json && json.ret == 0){
+                            lottery();
+                        }
+                    },"JSON");
+                }
             },
             cancel: function (res) {},
             fail: function (res) {}
