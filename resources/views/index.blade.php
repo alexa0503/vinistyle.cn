@@ -68,7 +68,8 @@
               @if ($has_award != 0)
               <div class="p1-btn3"></div>
               @endif
-              <img class="btn-piont" src="/images/btn-piont.png" />
+              <img class="btn-piont1" src="/images/p3-piont.png" />
+              <img class="btn-piont2" src="/images/p3-piont.png" />
               </div>
             </div>
             <!--首页按钮-->
@@ -317,7 +318,7 @@ function lottery()
                             $('.p7').fadeIn();
                         }
                         wxShare({shared:1});
-                    },500)
+                    },1000)
                     //抽奖执行完毕的回调函数,参数e为获奖编号
                     //因为这里是指定的，所以e == 5
                     //$('.jg1 em').text(e);
