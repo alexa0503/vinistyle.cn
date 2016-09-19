@@ -66,7 +66,7 @@
               <div class="p1-btn1"></div>
               <div class="p1-btn2"></div>
               @if ($has_award != 0)
-              <div class="p1-btn3" style="display:none;"></div>
+              <div class="p1-btn3"></div>
               @endif
               <img class="btn-piont" src="/images/btn-piont.png" />
               </div>
