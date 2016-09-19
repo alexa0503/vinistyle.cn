@@ -299,18 +299,21 @@ function lottery()
                 click : '.bt1', //点击触发
                 time: 1 ,//匀速运动的时间
                 end:function(e){
-                    if(e == 1){
-                        $('.p5').fadeIn();
-                    }
-                    else if(e == 2){
-                        $('.p6').fadeIn();
-                    }
-                    else if(e == 3){
-                        $('.p8').fadeIn();
-                    }
-                    else{
-                        $('.p7').fadeIn();
-                    }
+                    setTimeou(function(){
+                        if(e == 1){
+                            $('.p5').fadeIn();
+                        }
+                        else if(e == 2){
+                            $('.p6').fadeIn();
+                        }
+                        else if(e == 3){
+                            $('.p8').fadeIn();
+                        }
+                        else{
+                            $('.p7').fadeIn();
+                        }
+                    },500)
+
                     //抽奖执行完毕的回调函数,参数e为获奖编号
                     //因为这里是指定的，所以e == 5
                     //$('.jg1 em').text(e);
