@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>华瑞银行</title>
+<title>{{env("PAGE_TITLE")}}</title>
 <link rel="stylesheet" href="/css/main.css" />
 <link rel="stylesheet" href="/css/animate.css" />
 <script src="/js/jquery-2.2.0.min.js"></script>
