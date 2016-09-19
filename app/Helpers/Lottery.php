@@ -46,6 +46,8 @@ class Lottery
         //一个用户一次抽奖几乎,分享后可再抽一次奖
         $count2 = \App\Lottery::where('user_id', $wechat_user->id)
             ->sharedLock()
+            ->where('lottery_time', '>=', date('Y-m-d', $timestamp))
+            ->where('lottery_time', '<=', date('Y-m-d 23:59:59', $timestamp))
             ->count();
         if( $count2 == 1 && $wechat_user->has_shared == 0){
             return;
