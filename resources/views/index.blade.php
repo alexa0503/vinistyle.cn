@@ -65,7 +65,9 @@
               <div class="innerDiv">
               <div class="p1-btn1"></div>
               <div class="p1-btn2"></div>
-              <div class="p1-btn3"></div>
+              @if ($has_award != 0)
+              <div class="p1-btn3" style="display:none;"></div>
+              @endif
               <img class="btn-piont" src="/images/btn-piont.png" />
               </div>
             </div>
@@ -285,7 +287,7 @@
 function lottery()
 {
     $.post('/lottery',function(json){
-        $('.p5,.p6,.p7').hide();
+        $('.p5,.p6,.p7,.share').hide();
         var prize = 0;
         if(json && json.ret == 0){
             prize = json.prize;

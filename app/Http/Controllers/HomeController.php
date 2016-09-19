@@ -14,11 +14,15 @@ class HomeController extends Controller
     }
     public function index()
     {
-        return view('index');
+        $has_award = \App\Lottery::where('user_id',  Session::get('wechat.id'))
+            ->count();
+        return view('index', ['has_award'=> $has_award]);
     }
     public function share(Request $request, $id)
     {
-        return view('index',['id'=>$id]);
+        $has_award = \App\Lottery::where('user_id',  Session::get('wechat.id'))
+            ->count();
+        return view('index',['id'=>$id, 'has_award'=> $has_award]);
     }
     protected function reorder($data, $list = null)
     {
