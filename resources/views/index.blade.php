@@ -299,7 +299,7 @@ function lottery()
                 click : '.bt1', //点击触发
                 time: 1 ,//匀速运动的时间
                 end:function(e){
-                    setTimeou(function(){
+                    setTimeout(function(){
                         if(e == 1){
                             $('.p5').fadeIn();
                         }
