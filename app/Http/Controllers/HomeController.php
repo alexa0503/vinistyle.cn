@@ -156,7 +156,6 @@ class HomeController extends Controller
     }
     public function lottery()
     {
-        return ['ret'=>0,'prize'=>0];
         $timestamp = time();
         $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
         $count2 = \App\Lottery::where('user_id',  Session::get('wechat.id'))
