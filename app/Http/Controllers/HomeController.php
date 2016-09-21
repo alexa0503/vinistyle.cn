@@ -216,7 +216,16 @@ class HomeController extends Controller
         else{
             return ['ret'=>1001];
         }
-
-
+    }
+    public function info(Request $request)
+    {
+        $info = new App\Info();
+        $info->id =  Session::get('wechat.id');
+        $info->name = $request->get('name');
+        $info->mobile = $request->get('mobile');
+        $info->address = $request->get('address');
+        $info->ip_address = $request->getClientIp();
+        $info->save();
+        return ['ret'=>0];
     }
 }

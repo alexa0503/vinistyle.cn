@@ -309,12 +309,13 @@ function getAward()
         $('.p7').fadeIn();
     });
 }
+
+var prize = 0;
 function lottery()
 {
     $.post('/lottery',function(json){
         $('.p5,.p6,.p7,.p8,.share').hide();
         $('.cj1').empty();
-        var prize = 0;
         if(json && json.ret == 0){
             prize = json.prize;
             if( prize == 0 ){
@@ -329,13 +330,13 @@ function lottery()
                 time: 1 ,//匀速运动的时间
                 end:function(e){
                     setTimeout(function(){
-                        if(e == 1){
+                        if(prize == 1){
                             $('.p5').fadeIn();
                         }
-                        else if(e == 2){
+                        else if(prize == 2){
                             $('.p6').fadeIn();
                         }
-                        else if(e == 3){
+                        else if(prize == 3){
                             $('.p8').fadeIn();
                         }
                         else{
@@ -421,12 +422,29 @@ window.onload = function(){
 		var tAdress	= $('.adress').val();
 		if( tName == '' || tMobile == '' || tAdress == '' ){
 			alert('请完整填写信息');
-		}else{
+		}
+        else{
 			if(len<11){
-				alert('重新填写手机号');
-		}	else{
+				alert('手机格式不对');
+            }
+            else{
+                var data = {
+                    name: tName,
+                    mobile: tMobile,
+                    address: tAdress
+                }
+                $.post('/info',data,function(json){
+                    if( json.ret == 0){
+                        alert('提交成功~');
+                    }
+                    else{
+                        alert(json.msg);
+                    }
+                },"JSON").fail(function(){
+                    alert('提交失败~');
+                })
 				//这里提交信息
-				alert('来提交');
+				//alert('来提交');
 			}
 		}
 	});
