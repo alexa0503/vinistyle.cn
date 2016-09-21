@@ -288,7 +288,7 @@
 function lottery()
 {
     $.post('/lottery',function(json){
-        $('.p5,.p6,.p7,.share').hide();
+        $('.p5,.p6,.p7,.p8,.share').hide();
         $('.cj1').empty();
         var prize = 0;
         if(json && json.ret == 0){
