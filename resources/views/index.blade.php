@@ -285,6 +285,20 @@
     </div>
 
 <script>
+function getAward()
+{
+    $.getJSON('/award', function(json){
+        if(json && json.ret == 0){
+            var div = '.p'+(json.prize+4);
+            $(div).fadeIn();
+        }
+        else{
+            $('.p7').fadeIn();
+        }
+    }).fail(function(){
+        $('.p7').fadeIn();
+    });
+}
 function lottery()
 {
     $.post('/lottery',function(json){
@@ -325,6 +339,9 @@ function lottery()
                 }
             },prize); //这里tar是确定想要抽奖的目标是几号
             $('.p4').fadeIn();
+        }
+        else if( json && json.ret == 1100){
+            getAward();
         }
         else{
             alert(json.msg);
@@ -409,17 +426,7 @@ window.onload = function(){
 
 	//点击我的财富按钮，此处需要判断用户中了几等奖
 	$('.p1-btn3, .p3-btn1').on('touchend',function(){
-        $.getJSON('/award', function(json){
-            if(json && json.ret == 0){
-                var div = '.p'+(json.prize+4);
-                $(div).fadeIn();
-            }
-            else{
-                $('.p7').fadeIn();
-            }
-        }).fail(function(){
-            $('.p7').fadeIn();
-        });
+        getAward();
 		//一等奖
 		//$('.p5').fadeIn();
 		//二等奖
