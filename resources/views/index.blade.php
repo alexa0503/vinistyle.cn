@@ -289,8 +289,18 @@ function getAward()
 {
     $.getJSON('/award', function(json){
         if(json && json.ret == 0){
-            var div = '.p'+(json.prize+4);
-            $(div).fadeIn();
+            if(json.prize == 1){
+                $('.p5').fadeIn();
+            }
+            else if(json.prize == 2){
+                $('.p6').fadeIn();
+            }
+            else if(json.prize == 3){
+                $('.p8').fadeIn();
+            }
+            else{
+                $('.p7').fadeIn();
+            }
         }
         else{
             $('.p7').fadeIn();
