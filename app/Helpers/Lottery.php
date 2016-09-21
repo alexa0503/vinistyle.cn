@@ -78,6 +78,10 @@ class Lottery
             return;
         }
         $rand_max = ceil(1/$config->win_odds);
+        //第一次抽奖几率固定
+        if( $wechat_user->has_shared == 0 ){
+            $rand_max = 9;
+        }
         $rand1 = rand(1,$rand_max);
         $rand2 = rand(1,$rand_max);
         if( $rand1 != $rand2 ){
@@ -97,19 +101,24 @@ class Lottery
         $prize = $prize_model->first();
 
         //当日奖项设置
+        $count_config = \App\PrizeConfig::where('lottery_date', $date)
+            ->where('prize_num','>', \DB::raw('win_num'))
+            ->sharedLock()
+            ->count();
+        if( $count_config == 0){
+            return;
+        }
         $prize_config_model = \App\PrizeConfig::where('lottery_date', $date)
             ->where('prize_id', $prize->id)
             ->sharedLock();
         if( $prize_config_model->count() == 0 ){
             //如果此奖品奖池为空则分配最低等奖奖池
-            $prize_config_model = \App\PrizeConfig::where('lottery_date', $date)
+            $prize_config = \App\PrizeConfig::where('lottery_date', $date)
                 ->where('prize_num','>', \DB::raw('win_num'))
                 ->orderby('prize_id','desc')
-                ->sharedLock();
-            if( $prize_config_model->count() == 0){
-                return;
-            }
-            $prize_config = $prize_config_model->first();
+                ->sharedLock()
+                ->first();
+
             $this->prize_config_id = $prize_config->id;
             $prize = \App\Prize::find($prize_config->prize_id);
         }

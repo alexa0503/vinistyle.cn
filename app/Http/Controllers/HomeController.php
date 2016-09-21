@@ -191,6 +191,11 @@ class HomeController extends Controller
     {
         $timestamp = time();
         $count = \App\Lottery::where('user_id',  Session::get('wechat.id'))
+            ->whereNotNull('prize_id')->count();
+        if( $count > 0){
+            return ['ret'=>1002];
+        }
+        $count = \App\Lottery::where('user_id',  Session::get('wechat.id'))
             ->where('lottery_time', '>=', date('Y-m-d', $timestamp))
             ->where('lottery_time', '<=', date('Y-m-d 23:59:59', $timestamp))
             ->count();
