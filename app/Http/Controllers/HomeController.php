@@ -157,13 +157,15 @@ class HomeController extends Controller
     public function lottery()
     {
         $timestamp = time();
+        $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
         $has_win = App\Lottery::where('user_id',  Session::get('wechat.id'))
             ->whereNotNull('prize_id')
             ->count();
         if( $has_win > 0 ){
+            $wechat_user->has_shared = 0;
+            $wechat_user->save();
             return ['ret'=>1100, 'msg'=>'您已经中过奖了嗷~'];
         }
-        $wechat_user = App\WechatUser::find(Session::get('wechat.id'));
         $count2 = App\Lottery::where('user_id',  Session::get('wechat.id'))
             ->where('lottery_time', '>=', date('Y-m-d', $timestamp))
             ->where('lottery_time', '<=', date('Y-m-d 23:59:59', $timestamp))
