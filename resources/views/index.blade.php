@@ -340,7 +340,7 @@ function lottery()
             },prize); //这里tar是确定想要抽奖的目标是几号
             $('.p4').fadeIn();
         }
-        else if( json && json.ret == 1100){
+        else if(json.ret == 1100){
             getAward();
         }
         else{
