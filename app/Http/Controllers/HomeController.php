@@ -28,15 +28,16 @@ class HomeController extends Controller
     {
         if( $list == null ){
             $list = [
-                ['name'=>'比尔', 'wealth'=>'5200', 'scale'=>'-0.06', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'沃伦', 'wealth'=>'4500', 'scale'=>'-0.11', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'阿曼西奥', 'wealth'=>'4200', 'scale'=>'0.16', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'杰夫', 'wealth'=>'3500', 'scale'=>'0.83', 'from'=>'时装', 'location'=>'西班牙', 'isUser'=>false],
-                ['name'=>'埃卢', 'wealth'=>'3300', 'scale'=>'-0.40', 'from'=>'电商', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'马克', 'wealth'=>'3100', 'scale'=>'0.07', 'from'=>'通讯', 'location'=>'墨西哥', 'isUser'=>false],
-                ['name'=>'拉里', 'wealth'=>'3000', 'scale'=>'-0.15', 'from'=>'社交', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'大卫', 'wealth'=>'2700', 'scale'=>'-0.22', 'from'=>'软件', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'查尔斯', 'wealth'=>'2500', 'scale'=>'0.22', 'from'=>'能源', 'location'=>'美国', 'isUser'=>false],
+                ['name'=>'比尔盖子', 'wealth'=>'5200', 'scale'=>'-0.06', 'from'=>'投资', 'location'=>'美国', 'isUser'=>false],
+                ['name'=>'涡轮巴飞特', 'wealth'=>'4500', 'scale'=>'-0.11', 'from'=>'投资', 'location'=>'墨西哥', 'isUser'=>false],
+                ['name'=>'索螺丝', 'wealth'=>'4200', 'scale'=>'0.16', 'from'=>'投资', 'location'=>'加拿大', 'isUser'=>false],
+                ['name'=>'史地富乔不思', 'wealth'=>'3500', 'scale'=>'0.83', 'from'=>'科技', 'location'=>'美国
+', 'isUser'=>false],
+                ['name'=>'李加橙', 'wealth'=>'3300', 'scale'=>'-0.40', 'from'=>'实业', 'location'=>'中国', 'isUser'=>false],
+                ['name'=>'卡内急', 'wealth'=>'3100', 'scale'=>'0.07', 'from'=>'通讯', 'location'=>'墨西哥', 'isUser'=>false],
+                ['name'=>'大胃贝壳汉姆', 'wealth'=>'3000', 'scale'=>'-0.15', 'from'=>'社交', 'location'=>'美国', 'isUser'=>false],
+                ['name'=>'老虎舞姿', 'wealth'=>'2700', 'scale'=>'-0.22', 'from'=>'软件', 'location'=>'美国', 'isUser'=>false],
+                ['name'=>'傲八马', 'wealth'=>'2500', 'scale'=>'0.22', 'from'=>'能源', 'location'=>'美国', 'isUser'=>false],
                 ['name'=>'伯纳德', 'wealth'=>'2400', 'scale'=>'-0.76', 'from'=>'时装', 'location'=>'法国', 'isUser'=>false]
             ];
         }
