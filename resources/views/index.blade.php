@@ -280,10 +280,12 @@
         </div>
       </div>
       <!--填写信息-->
-
-
+          <!--榜单浮层-->
+        <div class="showsdiv" >
+           <div class="showsbox"><a href="javascript:;" onclick="jmClose();" class="cglcose"></a></div>
+        </div>
+        <div class="showsbgdiv"></div>
     </div>
-
 <script>
 function getAward()
 {

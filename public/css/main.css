@@ -89,11 +89,11 @@ select,input,textarea{font-family:inherit; outline:none;}
 	}
 	65%{
 		left:312px;
-		top:-8px;	
+		top:-8px;
 	}
 	85%{
 		left:312px;
-		top:56px;	
+		top:56px;
 	}
 	100%{
 		left:156px;
@@ -314,3 +314,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 
 
 
+/*榜单浮层*/
+.showsbgdiv{width:640px;height:100%;position:fixed;top:0px;left:50%;margin-left:-320px;margin-top:0px;background: url(../images/show_bg.jpg) no-repeat center;display:none;z-index:1000}
+.showsdiv{width:640px;height:auto; position:absolute;top:20%;left:50%;margin-left:-320px;display:none; z-index:1000000}
+.showsdiv .showsbox{width:640px; height:500px; position:relative;background: url(../images/show_jm.png) no-repeat center;}
+.showsdiv .showsbox .cglcose{ width:140px; height:140px; position:absolute; top:0; right:0}
