@@ -485,6 +485,7 @@ window.onload = function(){
         var url = '/rich/list/{{$id}}';
         @endif
         $.get(url,function(html){
+            showjm();
             $('.p3-box').html(html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();
