@@ -487,7 +487,7 @@ window.onload = function(){
         @else
         var url = '/rich/list/{{$id}}';
         @endif
-        $.get(url,function(html){
+        $.getJSON(url,function(json){
             showjm();
             $('.p3-box').html(json.html);
             $('.p2').fadeOut();
