@@ -438,6 +438,9 @@ window.onload = function(){
                 $.post('/info',data,function(json){
                     if( json.ret == 0){
                         alert('提交成功~');
+                        $('.p10').hide();
+                        $('.p5').show();
+                        //getAward();
                     }
                     else{
                         alert(json.msg);
