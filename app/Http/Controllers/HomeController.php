@@ -34,10 +34,10 @@ class HomeController extends Controller
                 ['name'=>'史地富乔不思', 'wealth'=>'3500', 'scale'=>'0.83', 'from'=>'科技', 'location'=>'美国
 ', 'isUser'=>false],
                 ['name'=>'李加橙', 'wealth'=>'3300', 'scale'=>'-0.40', 'from'=>'实业', 'location'=>'中国', 'isUser'=>false],
-                ['name'=>'卡内急', 'wealth'=>'3100', 'scale'=>'0.07', 'from'=>'通讯', 'location'=>'墨西哥', 'isUser'=>false],
-                ['name'=>'大胃贝壳汉姆', 'wealth'=>'3000', 'scale'=>'-0.15', 'from'=>'社交', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'老虎舞姿', 'wealth'=>'2700', 'scale'=>'-0.22', 'from'=>'软件', 'location'=>'美国', 'isUser'=>false],
-                ['name'=>'傲八马', 'wealth'=>'2500', 'scale'=>'0.22', 'from'=>'能源', 'location'=>'美国', 'isUser'=>false],
+                ['name'=>'卡内急', 'wealth'=>'3100', 'scale'=>'0.07', 'from'=>'钢铁', 'location'=>'印度', 'isUser'=>false],
+                ['name'=>'大胃贝壳汉姆', 'wealth'=>'3000', 'scale'=>'-0.15', 'from'=>'运动', 'location'=>'英国', 'isUser'=>false],
+                ['name'=>'老虎舞姿', 'wealth'=>'2700', 'scale'=>'-0.22', 'from'=>'运动', 'location'=>'发过', 'isUser'=>false],
+                ['name'=>'傲八马', 'wealth'=>'2500', 'scale'=>'0.22', 'from'=>'政治', 'location'=>'俄罗斯', 'isUser'=>false],
                 ['name'=>'伯纳德', 'wealth'=>'2400', 'scale'=>'-0.76', 'from'=>'时装', 'location'=>'法国', 'isUser'=>false]
             ];
         }
@@ -74,11 +74,13 @@ class HomeController extends Controller
             $scale = 0;
             $wealth = 0;
             $name = Session::get('wechat.nickname');
+            $link = url('/');
         }
         else{
             $wealth = $rich_list->wealth;
             $scale = $rich_list->scale;
             $name = json_decode($rich_list->user->nick_name);
+            $link = url('/share/'.$rich_list->id);
             //$scale = sprintf('%.2f',$wealth/$rich_list->wealth - 1);
         }
 
@@ -105,8 +107,9 @@ class HomeController extends Controller
             }
 
         }
-
-        return view('list', ['list' => $_list]);
+        $html = view('list', ['list' => $_list]);
+        return ['ret'=>0,'html'=>$html->render(),'link'=>$link];
+        //return view('list', ['list' => $_list]);
     }
     public function richRefresh(Request $request, $id = null)
     {

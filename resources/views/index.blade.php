@@ -489,9 +489,12 @@ window.onload = function(){
         @endif
         $.get(url,function(html){
             showjm();
-            $('.p3-box').html(html);
+            $('.p3-box').html(json.html);
             $('.p2').fadeOut();
             $('.p3').fadeIn();
+            wxShare({link:json.link});
+        }).fail(function(){
+            alert('网络出问题了嗷~');
         })
 	})
 
