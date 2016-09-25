@@ -72,18 +72,21 @@ class HomeController extends Controller
 
         if( null == $rich_list){
             $scale = 0;
-            $wealth = 0;
+            $wealth = rand(2401,5000);
             $name = Session::get('wechat.nickname');
-            $link = url('/');
+            $rich_list = new App\RichList();
+            $rich_list->wealth = $wealth;
+            $rich_list->scale = $scale;
+            $rich_list->user_id = Session::get('wechat.id');
+            $rich_list->save();
         }
         else{
             $wealth = $rich_list->wealth;
             $scale = $rich_list->scale;
             $name = json_decode($rich_list->user->nick_name);
-            $link = url('/share/'.$rich_list->id);
-            //$scale = sprintf('%.2f',$wealth/$rich_list->wealth - 1);
         }
 
+        $link = url('/share/'.$rich_list->id);
         $data = [
             'name' => $name,
             'wealth' => $wealth,
