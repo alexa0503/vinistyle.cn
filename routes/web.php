@@ -25,12 +25,12 @@ Route::get('/wx/share', function(){
         [
             'title' => '告诉你个小秘密，其实我是富一代',
             'desc' => '我只告诉你啦，你可千万不要告诉别人啊，做人要低调……',
-            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿',//年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……
         ],
         [
             'title' => '如何在30岁前挤进全球富豪榜',
             'desc' => '先设定一个小目标，成为有钱人',
-            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……',
+            'title_timeline' => '2016年华氏全球富豪榜：中国富豪'.json_decode(Session::get('wechat.nickname')).'年入6000万亿',//年入6000万亿（根据分享的互动榜单撰写）高居榜首（根据分享的互动榜单撰写）……
         ],
     ];
     $options = [
@@ -47,7 +47,7 @@ Route::get('/wx/share', function(){
       'title' => $_share[$n]['title'],
       'desc' => $_share[$n]['desc'],
       'title_timeline' => $_share[$n]['title_timeline'],
-      'link' => env('APP_URL'),
+      //'link' => env('APP_URL'),
       'imgUrl' => asset(env('WECHAT_SHARE_IMG')),
     ];
     return json_encode(array_merge($share, $config));
