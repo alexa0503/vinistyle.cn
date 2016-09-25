@@ -363,7 +363,8 @@ function lottery()
     },"JSON");
 }
 $().ready(function(){
-    wxShare();
+    //wxShare();
+    wxShare({link:'{{$link}}'});
 })
 $.ajaxSetup({
     headers: {

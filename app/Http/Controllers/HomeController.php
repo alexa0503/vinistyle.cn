@@ -16,7 +16,19 @@ class HomeController extends Controller
     {
         $has_award = \App\Lottery::where('user_id',  Session::get('wechat.id'))
             ->count();
-        return view('index', ['has_award'=> $has_award]);
+        $rich_list = App\RichList::where('user_id', Session::get('wechat.id'))->orderBy('created_at', 'DESC')->first();
+        if( null == $rich_list){
+            $scale = 0;
+            $wealth = rand(2401,5000);
+            $name = Session::get('wechat.nickname');
+            $rich_list = new App\RichList();
+            $rich_list->wealth = $wealth;
+            $rich_list->scale = $scale;
+            $rich_list->user_id = Session::get('wechat.id');
+            $rich_list->save();
+        }
+        $link = url('/share/'.$rich_list->id);
+        return view('index', ['has_award'=> $has_award, 'link'=>$link]);
     }
     public function share(Request $request, $id)
     {
