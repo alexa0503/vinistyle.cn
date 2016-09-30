@@ -461,6 +461,7 @@ window.onload = function(){
 	//点击我的财富按钮，此处需要判断用户中了几等奖
 	$('.p1-btn3, .p3-btn1').on('touchend',function(){
         getAward();
+        wxShare({shared:1});
 		//一等奖
 		//$('.p5').fadeIn();
 		//二等奖
