@@ -49,8 +49,8 @@ class WechatController extends Controller
                 $wechat->updated_at = null;
             }
             $wechat->gender = $sex;
-            $wechat->head_img = $headimgurl;
-            $wechat->nick_name = $nickname;
+            $wechat->head_img = $head_img;
+            $wechat->nick_name = $nick_name;
             $wechat->country = $country;
             $wechat->province = $province;
             $wechat->city = $city;
