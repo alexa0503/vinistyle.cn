@@ -319,3 +319,6 @@ select,input,textarea{font-family:inherit; outline:none;}
 .showsdiv{width:640px;height:auto; position:absolute;top:20%;left:50%;margin-left:-320px;display:none; z-index:1000000}
 .showsdiv .showsbox{width:640px; height:500px; position:relative;background: url(../images/show_jm.png) no-repeat center;}
 .showsdiv .showsbox .cglcose{ width:140px; height:140px; position:absolute; top:0; right:0}
+
+/*未中奖分享*/
+.p11{ display:none; position:relative; z-index:99px;}
