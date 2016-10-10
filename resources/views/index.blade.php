@@ -242,6 +242,16 @@
         </div>
       </div>
       <!--未中奖-->
+    <div class="p11">
+      	<div class="bgimg" style="width: 640px; height: 1039px; background: url(&quot;/images/p11-bg.jpg&quot;) no-repeat; top: 190px;"></div>
+        <div class="fix-height" style="padding-top: 205.5px;">
+          <div class="relative">
+          	<div class="ma1">
+            	<img src="/images/ma.png">
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!--规则-->
       <div class="p9">
@@ -286,17 +296,7 @@
         </div>
         <div class="showsbgdiv"></div>
     </div>
-    <!--未中奖分享提示-->
-<div class="p11" style="display: block;">
-      	<div class="bgimg" style="width: 640px; height: 1039px; background: url(&quot;/images/p11-bg.jpg&quot;) no-repeat; top: 190px;"></div>
-        <div class="fix-height" style="padding-top: 205.5px;">
-          <div class="relative">
-          	<div class="ma1">
-            	<img src="/images/ma.png">
-            </div>
-          </div>
-        </div>
-      </div>
+
 <script>
 function getAward()
 {
@@ -363,6 +363,9 @@ function lottery()
                 }
             },prize); //这里tar是确定想要抽奖的目标是几号
             $('.p4').fadeIn();
+        }
+        else if( json.ret == 1001 ){
+            $('.p11').fadeIn();
         }
         else if(json.ret == 1100){
             getAward();
