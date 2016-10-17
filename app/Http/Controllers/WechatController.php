@@ -14,7 +14,64 @@ class WechatController extends Controller
         Log::info('request arrived.');
         $server = \EasyWeChat::server();
         $server->setMessageHandler(function ($message) {
-            return "您好！欢迎关注我!";
+            if ($message->MsgType == 'text') {
+                # code...
+                switch ($message->Content) {
+                    case '/::)':
+                    case '/::P':
+                    case '/::D':
+                    case '/::B':
+                    case '/:,@P':
+                        return '1';
+                        # code...
+                        break;
+                    case '/::(':
+                    case '/::<':
+                    case '/::T':
+                        return '2';
+                        break;
+                    case '/::@':
+                    case '/::Q':
+                    case '/::+':
+                    case '/::8':
+                    case '/:xx':
+                        return '3';
+                        break;
+                    case '/::$':
+                    case '/::g':
+                    case '/:?':
+                    case '/:@>':
+                    case '/:<@':
+                        return '4';
+                        break;
+                    case '/:8-)':
+                    case '/::X':
+                    case '/:|-)':
+                    case '/::-O':
+                        return '5';
+                        break;
+                    case '/::O':
+                    case '/:,@o':
+                    case '/::d':
+                    case '/::!':
+                        return '6';
+                        break
+                    case '/::L':
+                    case '/:,@f':
+                    case '/::-S':
+                    case '/:!!!':
+                    case '/:,@!':
+                    case '/:8*':
+                        return '7';
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+                //$txt = new Text(['content'=>$message->Content]);
+                //$message->Content
+                return 'no result';
+            }
         });
         Log::info('return response.');
 
