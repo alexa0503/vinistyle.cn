@@ -18,51 +18,13 @@ class WechatController extends Controller
         $app_id = env('WECHAT_APPID');
         $callback_url = $request->getUriForPath('/wechat/callback');
         $state = '';
-        //$url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$app_id.'&redirect_uri='.$callback_url."&response_type=code&scope=snsapi_userinfo&state=$state#wechat_redirect";
-        $url = 'https://open.hulubank.com.cn/marketing/wxlogin/wxOAuth.html?appid=34b80033-856c-4f71-84c2-aeb2fb12d8ad';
+        $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$app_id.'&redirect_uri='.$callback_url."&response_type=code&scope=snsapi_userinfo&state=$state#wechat_redirect";
 
         return redirect($url);
     }
     public function callback(Request $request)
     {
-        if ( $request->get('nickname') == null || $request->get('wxOpenid') == null) {
-            //echo $user_data->message;
-            return view('errors/503', ['error_msg' => $user_data->message]);
-            //return $user_data->message;
-        } else {
-            $openid = $request->get('wxOpenid');
-            $nick_name = json_encode(urldecode($request->get('nickname')));
-            $head_img = $request->get('headimgurl');
-            $country = $request->get('country');
-            $province  = $request->get('province');
-            $city  = $request->get('city');
-            $sex = $request->get('sex');
-            $wechat_user = \App\WechatUser::where('open_id', $openid);
-            if ($wechat_user->count() > 0) {
-                $wechat = $wechat_user->first();
-                $wechat->updated_at = Carbon::now();
-            } else {
-                $wechat = new \App\WechatUser();
-                $wechat->open_id = $openid;
-                $wechat->created_at = Carbon::now();
-                $wechat->ip_address = $request->getClientIp();
-                $wechat->updated_at = null;
-            }
-            $wechat->gender = $sex;
-            $wechat->head_img = $head_img;
-            $wechat->nick_name = $nick_name;
-            $wechat->country = $country;
-            $wechat->province = $province;
-            $wechat->city = $city;
-            $wechat->save();
-            $request->session()->set('wechat.id', $wechat->id);
-            $request->session()->set('wechat.openid', $openid);
-            $request->session()->set('wechat.nickname', json_decode($wechat->nick_name));
-            $request->session()->set('wechat.headimg', $wechat->head_img);
 
-            return redirect($request->session()->get('wechat.redirect_uri'));
-        }
-        /*
         $app_id = env('WECHAT_APPID');
         $secret = env('WECHAT_SECRET');
         $code = $request->get('code');
@@ -110,6 +72,5 @@ class WechatController extends Controller
 
             return redirect($request->session()->get('wechat.redirect_uri'));
         }
-        */
     }
 }
