@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Helper;
 use Carbon\Carbon;
+use Log;
 
 class WechatController extends Controller
 {
+    public function server()
+    {
+        Log::info('request arrived.');
+        $server = \EasyWeChat::server();
+        $server->setMessageHandler(function ($message) {
+            return "您好！欢迎关注我!";
+        });
+        Log::info('return response.');
+
+        return $server->serve();
+    }
     public function auth(Request $request)
     {
         if (null != $request->get('url')) {

@@ -10,13 +10,6 @@ class HomeController extends Controller
     }
     public function index()
     {
-
-        $server = \EasyWeChat::server();
-        $server->setMessageHandler(function ($message) {
-            return "您好！欢迎关注我!";
-        });
-        $response = $server->serve();
-
-        return $response;
+        return;
     }
 }
