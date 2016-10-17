@@ -15,7 +15,6 @@ class HomeController extends Controller
         $server->setMessageHandler(function ($message) {
             return "您好！欢迎关注我!";
         });
-        var_dump($server);
         $response = $server->serve();
 
         return $response;
