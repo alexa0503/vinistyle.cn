@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use EasyWeChat\Foundation\Application;
 class HomeController extends Controller
 {
     public function __construct()
@@ -11,23 +10,13 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $app_id = env('WECHAT_APPID');
-        $secret = env('WECHAT_SECRET');
-        $options = [
-            'debug' => true,
-            'app_id' => env('WECHAT_APPID'),
-            'secret' => env('WECHAT_SECRET'),
-            'token' => env('WECHAT_TOKEN'),
-            // 'aes_key' => null, // 可选
-            'log' => [
-                'level' => 'debug',
-                //'file' => '/tmp/easywechat.log',
-            ],
-            //...
-        ];
 
-        $app = new Application($options);
-        $response = $app->server->serve();
+        $server = \EasyWeChat::server();
+        $server->setMessageHandler(function ($message) {
+            return "您好！欢迎关注我!";
+        });
+        var_dump($server);
+        $response = $server->serve();
 
         return $response;
     }

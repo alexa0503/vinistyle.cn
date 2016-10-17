@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::any('/', 'HomeController@index');
 Route::get('logout',function(){
     Request::session()->set('wechat.openid',null);
     Request::session()->set('wechat.id',null);
