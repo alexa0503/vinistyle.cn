@@ -22,12 +22,19 @@ class WechatController extends Controller
                     case '/::D':
                     case '/::B':
                     case '/:,@P':
+                    case '/:,@-D':
+                    case '/::>':
+                    case '/:B-)':
                         return '1';
                         # code...
                         break;
                     case '/::(':
                     case '/::<':
                     case '/::T':
+                    case '/::~':
+                    case "/::'(":
+                    case "/::'|":
+                    case '/:@x':
                         return '2';
                         break;
                     case '/::@':
@@ -35,6 +42,7 @@ class WechatController extends Controller
                     case '/::+':
                     case '/::8':
                     case '/:xx':
+                    case '/::|':
                         return '3';
                         break;
                     case '/::$':
@@ -42,12 +50,18 @@ class WechatController extends Controller
                     case '/:?':
                     case '/:@>':
                     case '/:<@':
+                    case '/:--b':
+                    case '/:>-|':
+                    case '/:P-(':
                         return '4';
                         break;
                     case '/:8-)':
                     case '/::X':
                     case '/:|-)':
                     case '/::-O':
+                    case '/::Z':
+                    case '/:,@x':
+                    case '/:,@@':
                         return '5';
                         break;
                     case '/::O':
@@ -55,16 +69,18 @@ class WechatController extends Controller
                     case '/::d':
                     case '/::!':
                         return '6';
-                        break
+                        break;
                     case '/::L':
                     case '/:,@f':
                     case '/::-S':
                     case '/:!!!':
                     case '/:,@!':
                     case '/:8*':
+                    case '/::,@':
                         return '7';
                         break;
                     default:
+                        return '7';
                         # code...
                         break;
                 }
