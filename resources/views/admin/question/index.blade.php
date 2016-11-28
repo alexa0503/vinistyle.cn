@@ -8,7 +8,7 @@
                 <!-- Start .page-content-inner -->
                 <div id="page-header" class="clearfix">
                     <div class="page-header">
-                        <h2>妆容管理</h2>
+                        <h2>测试问题</h2>
                         <span class="txt"></span>
                     </div>
 
@@ -24,12 +24,7 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>预览图</th>
                                         <th>标题</th>
-                                        <th>副标题</th>
-                                        <th>适用场景</th>
-                                        <th>达人专家</th>
-                                        <th>推荐产品</th>
                                         <th>创建时间</th>
                                         <th>操作</th>
                                     </tr>
@@ -38,16 +33,13 @@
                                     @foreach ($rows as $row)
                                     <tr>
                                         <td>{{ $row->id }}</td>
-                                        <td><a href="{{ asset($row->pre_img_path) }}"><img src="{{ asset($row->pre_img_path) }}" style="max-width:200px;max-height:200px;" /></a></td>
                                         <td>{{ $row->title }}</td>
-                                        <td>{{ $row->sub_title }}</td>
-                                        <td>{{ $row->application }}</td>
-                                        <td>@foreach ($row->features as $feature){{$feature->name}} @endforeach</td>
-                                        <td>@foreach ($row->items as $item){{$item->name}} @endforeach</td>
                                         <td>{{ $row->created_at }}</td>
                                         <td>
-                                            <a href="{{route('makeup.edit',['id'=>$row->id])}}" class="label label-info">编辑</a>
-                                            <a href="{{route('makeup.destroy',['id'=>$row->id])}}" class="delete label label-info">删除</a></td>
+                                            <a href="{{route('question.edit',['id'=>$row->id])}}" class="label label-info">编辑</a>
+                                            <a href="{{route('question.destroy',['id'=>$row->id])}}" class="delete label label-info">删除</a>
+                                            <a href="{{route('questions.items.index',['id'=>$row->id])}}" class="label label-info">答案推荐产品</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>

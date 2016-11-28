@@ -15,6 +15,10 @@ class Makeup extends Model
     {
         return $this->belongsToMany('App\Feature', 'feature_makeups', 'makeup_id', 'feature_id');
     }
+    public function items()
+    {
+        return $this->belongsToMany('App\Item', 'makeup_items', 'makeup_id', 'item_id');
+    }
     public function getPreImgUrlAttribute($value)
     {
         return asset($this->pre_img_path);

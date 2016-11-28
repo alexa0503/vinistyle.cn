@@ -83,6 +83,17 @@
                                             <label class="help-block" for="feature_ids"></label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="text" class="col-lg-2 col-md-3 control-label">产品推荐</label>
+                                        <div class="col-lg-10 col-md-9">
+                                            <select name="item_ids[]" class="form-control" multiple="multiple">
+                                                @foreach ($items as $item)
+                                                <option value="{{$item->id}}"@if (in_array($item->id, $item_ids))' selected="selected"'@endif>{{$item->name}} - {{$item->type->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <label class="help-block" for="item_ids"></label>
+                                        </div>
+                                    </div>
                                     <!-- End .form-group  -->
                                     <div class="form-group">
                                         <label class="col-lg-2 col-md-3 control-label"></label>

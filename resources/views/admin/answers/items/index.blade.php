@@ -8,7 +8,7 @@
                 <!-- Start .page-content-inner -->
                 <div id="page-header" class="clearfix">
                     <div class="page-header">
-                        <h2>妆容管理</h2>
+                        <h2>测试问题推荐答案 - {{$question->title}}</h2>
                         <span class="txt"></span>
                     </div>
 
@@ -24,11 +24,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>预览图</th>
-                                        <th>标题</th>
-                                        <th>副标题</th>
-                                        <th>适用场景</th>
-                                        <th>达人专家</th>
+                                        <th>问题</th>
+                                        <th>答案</th>
                                         <th>推荐产品</th>
                                         <th>创建时间</th>
                                         <th>操作</th>
@@ -38,16 +35,15 @@
                                     @foreach ($rows as $row)
                                     <tr>
                                         <td>{{ $row->id }}</td>
-                                        <td><a href="{{ asset($row->pre_img_path) }}"><img src="{{ asset($row->pre_img_path) }}" style="max-width:200px;max-height:200px;" /></a></td>
-                                        <td>{{ $row->title }}</td>
-                                        <td>{{ $row->sub_title }}</td>
-                                        <td>{{ $row->application }}</td>
-                                        <td>@foreach ($row->features as $feature){{$feature->name}} @endforeach</td>
-                                        <td>@foreach ($row->items as $item){{$item->name}} @endforeach</td>
+                                        <td>{{ $row->question->title }}</td>
+                                        <td>{{ $row->answer }}</td>
+                                        <td>{{ $row->item->name }}</td>
                                         <td>{{ $row->created_at }}</td>
                                         <td>
-                                            <a href="{{route('makeup.edit',['id'=>$row->id])}}" class="label label-info">编辑</a>
-                                            <a href="{{route('makeup.destroy',['id'=>$row->id])}}" class="delete label label-info">删除</a></td>
+                                            <a href="{{route('questions.items.edit',['question'=>$row->question_id,'item'=>$row->id])}}" class="label label-info">编辑</a>
+                                            <a href="{{route('questions.items.destroy',['question'=>$row->question_id,'item'=>$row->id])}}" class="delete label label-info">删除</a>
+                                            <a href="{{route('questions.items.create',['question'=>$row->question_id])}}" class="label label-info">添加</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     </tbody>

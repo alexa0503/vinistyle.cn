@@ -25,7 +25,12 @@ Route::group(['middleware' => ['web'], 'prefix'=>'makeup'], function () {
     Route::any('{id}', 'MakeupController@show');
 });
 Route::group(['middleware' => ['web'], 'prefix'=>'webform'], function () {
-    Route::any('postWebform', 'FormController@post');
+    Route::any('postWebform', 'FormController@store');
+    Route::any('products', 'FormController@index');
+});
+Route::group(['middleware' => ['web'], 'prefix'=>'article'], function () {
+    Route::any('menu', 'FeatureController@type');
+    Route::any('getList/{title}', 'FeatureController@index');
 });
 
 
@@ -52,6 +57,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
         Route::resource('type', 'ItemTypeController');
         Route::resource('makeup', 'MakeupController');
         Route::resource('feature', 'FeatureController');
+        Route::resource('question', 'QuestionController');
+        Route::resource('questions.items', 'AnswerItemController');
 
         Route::get('account', 'IndexController@account');
         Route::post('account', 'IndexController@accountPost');

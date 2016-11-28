@@ -97,6 +97,16 @@ class MakeupController extends Controller
                     $feature_makeup->save();
                 }
             }
+
+            $item_ids = $request->input('item_ids');
+            if( !empty($item_ids) && is_array($item_ids) ){
+                foreach( $item_ids as $id){
+                    $makeu_item = new \App\MakeupItem();
+                    $makeu_item->makeup_id = $row->id;
+                    $makeu_item->item_id = $id;
+                    $makeu_item->save();
+                }
+            }
             DB::commit();
         }catch (Exception $e){
             DB::rollBack();
@@ -129,11 +139,19 @@ class MakeupController extends Controller
         $feature_ids = $row->features->map(function($item){
             return $item->id;
         })->toArray();
+
+        $item_ids = $row->items->map(function($item){
+            return $item->id;
+        })->toArray();
         $features = \App\Feature::all();
-        return view('admin/makeup/edit', ['row'=>$row,
+        $items = \App\Item::all();
+        return view('admin/makeup/edit', [
+            'row'=>$row,
             'features'=>$features,
-            'feature_ids'=>$feature_ids]
-        );
+            'items'=>$items,
+            'feature_ids'=>$feature_ids,
+            'item_ids'=>$item_ids,
+        ]);
     }
 
     /**
@@ -204,6 +222,17 @@ class MakeupController extends Controller
                     $feature_makeup->makeup_id = $row->id;
                     $feature_makeup->feature_id = $id;
                     $feature_makeup->save();
+                }
+            }
+
+            $item_ids = $request->input('item_ids');
+            \App\MakeupItem::where('makeup_id', $row->id)->delete();
+            if( !empty($item_ids) && is_array($item_ids) ){
+                foreach( $item_ids as $id){
+                    $makeu_item = new \App\MakeupItem();
+                    $makeu_item->makeup_id = $row->id;
+                    $makeu_item->item_id = $id;
+                    $makeu_item->save();
                 }
             }
 

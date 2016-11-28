@@ -30,6 +30,9 @@ class MenuMiddleware
             $feature = $menu->add('达人专家',['url'=>'#']);
             $feature->add('查看', ['url'=>'admin/feature']);
             $feature->add('添加', ['url'=>'admin/feature/create']);
+            $question = $menu->add('测试问题',['url'=>'#']);
+            $question->add('查看', ['url'=>'admin/question']);
+            $question->add('添加', ['url'=>'admin/question/create']);
             //$menu->add('查看奖品',['url'=>'admin/prizes']);
             //$page->add('查看', 'page/view')->divide();
             //$menu->add('账户',['route'=>'admin_account']);
