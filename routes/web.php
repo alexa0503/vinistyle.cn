@@ -10,47 +10,61 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', 'HomeController@index');
-Route::any('/wechat', 'WechatController@server');
-
-Route::get('logout',function(){
-    Request::session()->set('wechat.openid',null);
-    Request::session()->set('wechat.id',null);
-    return redirect('/');
+//,'api.auth'
+Route::group(['middleware' => ['web'], 'prefix'=>'user'], function () {
+    Route::any('islogin', 'UserController@isLogin');
+    Route::any('loginOut', 'UserController@logout');
+    Route::any('login', 'UserController@login');
+    Route::any('regmember', 'UserController@register');
+    Route::any('send', 'UserController@sms');
+    Route::any('getMember/{mobile}?', 'UserController@show');
+    Route::any('updateMember/{id}', 'UserController@update');
 });
-Route::get('login',function(){
-    $wechat_user = App\WechatUser::find(1);
-    Request::session()->set('wechat.openid',$wechat_user->open_id);
-    Request::session()->set('wechat.id',$wechat_user->id);
-    Request::session()->set('wechat.nickname',json_decode($wechat_user->nick_name));
-    return redirect('/');
+Route::group(['middleware' => ['web'], 'prefix'=>'makeup'], function () {
+    Route::any('/', 'MakeupController@index');
+    Route::any('{id}', 'MakeupController@show');
 });
-
-///
-
-Route::get('/admin/login', 'Admin\AuthController@getLogin');
-Route::post('/admin/login', 'Admin\AuthController@postLogin');
-Route::any('/admin/logout', function(){
-    Auth::guard('admin')->logout();
-    return redirect('/admin/login');
+Route::group(['middleware' => ['web'], 'prefix'=>'webform'], function () {
+    Route::any('postWebform', 'FormController@post');
 });
 
 
-Route::group(['middleware' => ['auth:admin','menu']], function () {
-    Route::get('admin', 'CmsController@index')->name('admin_dashboard');
-    Route::get('admin/users', 'CmsController@users');
-    Route::get('admin/account', 'CmsController@account');
-    Route::post('admin/account', 'CmsController@accountPost');
-});
-//初始化后台帐号
-Route::get('admin/install', function () {
-    if (0 == \App\Admin::count()) {
-        $user = new \App\Admin();
-        $user->name = 'admin';
-        $user->email = 'admin@admin.com';
-        $user->password = bcrypt('admin@2016');
-        $user->save();
-    }
-    return redirect('admin/login');
+
+Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
+{
+    $router->get('login', 'LoginController@showLoginForm')->name('admin.login');
+    $router->post('login', 'LoginController@login');
+    $router->get('logout', 'LoginController@logout');
+    /*
+    Route::get('/login', 'Admin\AuthController@getLogin');
+    Route::post('/login', 'Admin\AuthController@postLogin');
+    Route::any('/logout', function(){
+        Auth::guard('admin')->logout();
+        return redirect('/login');
+    });
+    */
+
+
+
+    Route::group(['middleware' => ['auth.admin:admin','menu']], function () {
+        Route::get('/', 'IndexController@index')->name('admin_dashboard');
+        Route::resource('item', 'ItemController');
+        Route::resource('type', 'ItemTypeController');
+        Route::resource('makeup', 'MakeupController');
+        Route::resource('feature', 'FeatureController');
+
+        Route::get('account', 'IndexController@account');
+        Route::post('account', 'IndexController@accountPost');
+    });
+    //初始化后台帐号
+    Route::get('install', function () {
+        if (0 == \App\Admin::count()) {
+            $user = new \App\Admin();
+            $user->name = 'admin';
+            $user->email = 'admin@admin.com';
+            $user->password = bcrypt('admin@2016');
+            $user->save();
+        }
+        return redirect('admin/login');
+    });
 });

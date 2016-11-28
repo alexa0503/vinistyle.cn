@@ -167,6 +167,10 @@ return [
          * Package Service Providers...
          */
 
+        'Lavary\Menu\ServiceProvider',
+        Unisharp\Ckeditor\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Bestmomo\Filemanager\FilemanagerServiceProvider::class,
         //
 
         /*
@@ -177,7 +181,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Overtrue\LaravelWechat\ServiceProvider::class,
 
     ],
 
@@ -225,7 +228,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
+        'Menu'       => 'Lavary\Menu\Facade',
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

@@ -52,7 +52,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'wechat.auth' => \App\Http\Middleware\WechatAuthMiddleware::class,
+        'api.auth' => \App\Http\Middleware\AuthMiddleware::class,
+        'auth.admin' => \App\Http\Middleware\AdminAuthMiddleware::class,
         'menu' => \App\Http\Middleware\MenuMiddleware::class,
     ];
 }
